@@ -1,0 +1,11 @@
+.container {
+  background-color: var(--background-secondary);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.innerContainer {
+  text-align: center;
+  color: var(--text-dulled);
+}

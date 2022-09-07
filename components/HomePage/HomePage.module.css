@@ -1,0 +1,20 @@
+.home-container {
+  min-width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.home-inner-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.home-card-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

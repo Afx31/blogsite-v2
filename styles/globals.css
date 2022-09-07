@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -22,5 +22,81 @@ a {
   body {
     color: white;
     background: black;
+  }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html,
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* * {
+  font-family: 'Roboto', sans-serif;
+} */
+
+#root {
+  position: relative;
+  padding-bottom: 3rem;
+  min-height: 100vh;
+}
+
+.darkmode {
+  --background: #181A1B;
+  --text-primary: #FFF;
+}
+
+.lightmode {
+  --background: #FFFF;
+  --text-primary: #000;
+}
+
+.App {
+  background-color: var(--background);
+  color: var(--text-primary);
+  --background-secondary: #343A40;
+  --background-tertiary: #E2E2E2;
+  --text-secondary: #AAA;
+  --text-alert: #FF0000;
+  --text-white: #FFF;
+  --text-dulled: #6c757d;
+  --text-links-blue: #007bff;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0px;
+  margin-bottom: .5rem;
+}
+
+.scrollTop {
+  position: fixed;
+  bottom: 100px;
+  right: 0;
+  margin-right: 2rem;
+  justify-content: flex-end;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
