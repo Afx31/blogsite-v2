@@ -1,19 +1,19 @@
-.pcb-date {
+.postDate {
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 13px;
   color: var(--text-secondary);
 }
-.pcb-date-format {
+.postDateFormat {
   font-weight: bold;
 }
 
-.pcb-img {
+.postImg {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.pcb-dropdown-divider {
+.postDropdownDivider {
   margin: 4rem 0;
   border: 1px solid var(--background-secondary);
 }

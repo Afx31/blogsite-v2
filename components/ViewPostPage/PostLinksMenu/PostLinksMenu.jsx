@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import '../ViewPostPage.css';
-import { NavLink } from 'react-router-dom';
+import NextLink from 'next/link';
+import styles from '../ViewPostPage.module.css';
 
 const PostLinksMenu = ({ slug, heading, car }) => {
   return (
     <>
       <li>
-        <NavLink
-          to={`/viewpost/${car}/${slug}`}
-          className='post-links'
+        <NextLink
+          href={`/viewpost/${car}/${slug}`}
+          className={styles.postLinks}
           activeStyle={{ fontWeight: 'bold' }}
         >
           {heading}
-        </NavLink>
+        </NextLink>
       </li>
     </>
-  )
+  );
 };
 
 export default PostLinksMenu;

@@ -151,7 +151,7 @@ const Navbar = () => {
         </ul>
         <ul className={styles.navbarList}>
           <li className={styles.navbarItem}>
-            <NextLink href={`/viewpost/Civic/${civicLink}`}>
+            <NextLink href='/firstpage'>
               Civic
             </NextLink>
           </li>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './PostContentBody.css';
+import styles from './PostContentBody.module.css';
 import Moment from 'react-moment';
 import Spinner from '../../Layout/Spinner';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import { getPostBySlug } from '../../../api/post';
-import CommentForm from '../Comments/CommentForm';
-import CommentItem from '../Comments/CommentItem';
+// import rehypeRaw from 'rehype-raw';
+// import { getPostBySlug } from '../../../api/post';
+// import CommentForm from '../Comments/CommentForm';
+// import CommentItem from '../Comments/CommentItem';
 
 function youtubeRender() {
   var itemToRender = document.querySelectorAll(`[src*='ytvid']`);
@@ -31,19 +31,19 @@ const PostContentBody = ({ id }) => {
   const [currentPost, setCurrentPost] = useState();
   var slideIndex = 1;
 
-  useEffect(() => {
-    async function fetchData() {
-      setCurrentPost(await getPostBySlug(id));
-    };
-    fetchData();
-  }, [id]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     setCurrentPost(await getPostBySlug(id));
+  //   };
+  //   fetchData();
+  // }, [id]);
 
-  useEffect(() => {
-    if (currentPost && currentPost.post !== '') {
-      youtubeRender();
-      carouselRender(slideIndex);
-    }
-  }, [currentPost]);
+  // useEffect(() => {
+  //   if (currentPost && currentPost.post !== '') {
+  //     youtubeRender();
+  //     carouselRender(slideIndex);
+  //   }
+  // }, [currentPost]);
   
   function currentSlide(n) {
     carouselRender(slideIndex = n)
@@ -85,22 +85,22 @@ const PostContentBody = ({ id }) => {
       {currentPost !== undefined && (
         <>
           <h1 >{currentPost.heading}</h1>
-          <p className='pcb-date'>
+          <p className={styles.postDate}>
             Posted on{' '}
-            <Moment format='DD MMMM, YYYY' className='pcb-date-format'>
+            <Moment format='DD MMMM, YYYY' className={styles.postDateFormat}>
               {currentPost.createdDate}
             </Moment>
           </p>
-          <div className="reactMarkdown">
+          <div className={styles.reactMarkdown}>
             <ReactMarkdown rehypePlugins={[rehypeRaw]} children={currentPost.post} />
           </div>
-          <hr className='pcb-dropdown-divider' />          
-          <div className='comments'>
+          {/* <hr className={styles.postDropdownDivider} />          
+          <div className={styles.comments}>
             {currentPost.comments.map(comment => (
-              <CommentItem key={comment._id} comment={comment} postId={id} />
+              <CommentItem key={comment._id} comme  nt={comment} postId={id} />
             ))}
           </div>
-          <CommentForm postId={id} />
+          <CommentForm postId={id} /> */}
         </>
       )}
     </>

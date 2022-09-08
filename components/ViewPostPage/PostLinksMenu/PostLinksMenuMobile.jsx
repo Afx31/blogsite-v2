@@ -1,14 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import NextLink from 'next/link';
 
 const PostLinksMenuMobile = ({ slug, heading, car }) => {
   return (
     <>
       <option>
-        <Link to={`/viewpost/${car}/${slug}`}>{heading}</Link>
+        <NextLink to={`/viewpost/${car}/${slug}`}>{heading}</NextLink>
       </option>
     </>
-  )
+  );
 };
 
 export default PostLinksMenuMobile;
