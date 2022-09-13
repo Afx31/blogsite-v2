@@ -1,11 +1,14 @@
 .container {
   background-color: var(--background-secondary);
-  position: absolute;
-  bottom: 0;
   width: 100%;
+  padding: 1rem 0;
 }
 
 .innerContainer {
   text-align: center;
   color: var(--text-dulled);
+}
+
+.innerContainer p {
+  margin: 0;  
 }

@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './PostContentBody.module.css';
 import Moment from 'react-moment';
 import Spinner from '../../Layout/Spinner';
-// import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-// import rehypeRaw from 'rehype-raw';
-// import { getPostBySlug } from '../../../api/post';
 // import CommentForm from '../Comments/CommentForm';
 // import CommentItem from '../Comments/CommentItem';
 
@@ -26,24 +23,14 @@ function youtubeRender() {
   });
 }
 
-//const PostContentBody = ({ getPostBySlug, id, post: { singlePost, loading } }) => {
-const PostContentBody = ({ id }) => {
-  const [currentPost, setCurrentPost] = useState();
+const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
   var slideIndex = 1;
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     setCurrentPost(await getPostBySlug(id));
-  //   };
-  //   fetchData();
-  // }, [id]);
-
-  // useEffect(() => {
-  //   if (currentPost && currentPost.post !== '') {
-  //     youtubeRender();
-  //     carouselRender(slideIndex);
-  //   }
-  // }, [currentPost]);
+  useEffect(() => {
+    if (id !== null) {
+      youtubeRender();
+      carouselRender(slideIndex);
+    }
+  }, [id]);
   
   function currentSlide(n) {
     carouselRender(slideIndex = n)
@@ -78,45 +65,29 @@ const PostContentBody = ({ id }) => {
     }
   }
 
-  return currentPost === null || currentPost === undefined ? (
+  return id === null || id === undefined ? (
     <Spinner />
   ) : (
     <>
-      {currentPost !== undefined && (
-        <>
-          <h1 >{currentPost.heading}</h1>
-          <p className={styles.postDate}>
-            Posted on{' '}
-            <Moment format='DD MMMM, YYYY' className={styles.postDateFormat}>
-              {currentPost.createdDate}
-            </Moment>
-          </p>
-          <div className={styles.reactMarkdown}>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={currentPost.post} />
-          </div>
-          {/* <hr className={styles.postDropdownDivider} />          
-          <div className={styles.comments}>
-            {currentPost.comments.map(comment => (
-              <CommentItem key={comment._id} comme  nt={comment} postId={id} />
-            ))}
-          </div>
-          <CommentForm postId={id} /> */}
-        </>
-      )}
+      <h1>{title}</h1>
+      <p className={styles.postDate}>
+        Posted on{' '}
+        <Moment format='DD MMMM, YYYY' className={styles.postDateFormat}>
+          {createdAt}
+        </Moment>
+      </p>
+      <div className={styles.reactMarkdown}>
+        <ReactMarkdown children={content} />
+      </div>
+      {/* <hr className={styles.postDropdownDivider} />          
+      <div className={styles.comments}>
+        {post.comments.map(comment => (
+          <CommentItem key={comment._id} comme  nt={comment} postId={id} />
+        ))}
+      </div>
+      <CommentForm postId={id} /> */}
     </>
   )
 };
-
-// PostContentBody.propTypes = {
-//   getPostBySlug: PropTypes.func.isRequired,
-//   post: PropTypes.object.isRequired
-// };
-
-// const mapStateToProps = (state) => ({
-//   post: state.post
-// });
-
-// export default connect(mapStateToProps, { getPostBySlug })(PostContentBody);
-
 
 export default PostContentBody;

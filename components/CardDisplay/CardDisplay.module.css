@@ -1,10 +1,10 @@
-.card-container {
+.container {
   margin: 1rem;
   position: relative;
   max-width: 30%;
 }
 
-.card-img {
+.img {
   display: block;
   width: 100%;
   border-radius: 0.2rem;
@@ -20,7 +20,7 @@
   border-radius: 0.2rem;
 }
 
-.card-content {
+.content {
   position: absolute;
   color: var(--text-white);
   width: 90%;
@@ -29,19 +29,21 @@
   transform: translate(-50%, -50%);
 }
 
-.card-content p {
+.content p {
   font-size: 20px;
   margin: 0 0 16px;
 }
 
-.btn-readmore {
+.readmoreBtn {
   font-size: 16px;
   padding: 12px 20px;
   color: var(--text-white);
   border: 2px solid var(--text-white);
-  text-decoration: none;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: pointer;
 }
-.btn-readmore:hover {
+.readmoreBtn:hover {
   color: #000;
   background-color: var(--text-white);
   border: 2px solid var(--text-white);
@@ -49,7 +51,7 @@
 }
 
 @media (max-width: 960px) {
-  .card-container {
+  .container {
     min-width: 100%;
   }
 }

@@ -37,6 +37,12 @@
   padding: 0 0.5rem;
   display: block;
 }
+.navbarItem i {
+  cursor: pointer;
+  text-decoration: none !important;
+  padding: 0 0.5rem;
+  display: block;
+}
 
 .navbarItemThemebtn {
   list-style: none;
@@ -57,15 +63,6 @@
   padding: 0.4rem 0.6rem !important;
   line-height: 1.5 !important;
 }
-
-.btnSuccess {
-  color: green;
-}
-
-.btnPrimary {
-  color: blue;
-}
-
 
 /* CSS for dark theme toggle */
 .themeBtnContainer {
@@ -107,7 +104,7 @@
   stroke: var(--opp-text);
 }
 
-.themeBtn-active .themeBtn-button {
+.themeBtnActive .themeBtnButton {
   top: -40px;
 }
 
@@ -120,7 +117,7 @@
 }
 
 @media (max-width: 992px) {
-  .cover-img-container {
+  .coverImgContainer {
     background-image: none;
     height: 0;
   }
