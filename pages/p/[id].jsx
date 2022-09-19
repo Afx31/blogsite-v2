@@ -1,14 +1,12 @@
+import styles from '../../styles/Post.module.css';
 import React from 'react';
 import Router from 'next/router';
 import prisma from '../../lib/prisma';
-import { makeSerializable } from '../../lib/util'
-import styles from '../../styles/Post.module.css';
+import Layout from '../../components/Layout';
 import NextLink from 'next/link';
+import { makeSerializable } from '../../lib/util'
 import PostContentBody from '../../components/PostComponents/PostContentBody/PostContentBody';
 import Spinner from '../../components/Layout/Spinner';
-import Navbar from '../../components/Navbar/Navbar';
-import Layout from '../../components/Layout';
-import Footer from '../../components/Footer/Footer';
 
 const ViewPostPage = (props) => {
   const currentRouter = `/p/${props.post.id}`;
@@ -17,9 +15,10 @@ const ViewPostPage = (props) => {
     <Spinner />
   ) : (
     <>
-    {/* <Layout> */}
-    <div className={`App`}>
-    <Navbar />
+    <Layout
+      civicLink={props.navLinks[0].id}
+      wagoLink={props.navLinks[1].id}
+    >
       <div className={styles.vppContainer}>
         <div className={styles.vppPaneLeft}>
           <h1>{props.post.car}</h1>
@@ -30,10 +29,7 @@ const ViewPostPage = (props) => {
               {props.postLinks.map((post) => (
                 <>
                   <li>
-                    <NextLink
-                      key={post.id} 
-                      href={`/p/${post.id}`}
-                    >
+                    <NextLink key={post.id} href={{ pathname: `/p/${post.id}`, query: { car: post.car } }}>
                       <a
                         className={`${styles.postLinks} ${currentRouter === `/p/${post.id}` ? `${styles.postLinksActive}` : ''} `}
                       >
@@ -62,9 +58,7 @@ const ViewPostPage = (props) => {
           <PostContentBody post={props.post} />
         </div>
       </div>
-      <Footer />
-      </div>
-     {/* </Layout> */}
+     </Layout>
     </>
   )
 };
@@ -76,7 +70,7 @@ export const getServerSideProps = async (context) => {
 
   const recentPostLinks = await prisma.post.findMany({
     where: {
-      car: 'Civic'
+      car: context.query.car
     },
     orderBy: {
       id: 'desc'
@@ -87,9 +81,30 @@ export const getServerSideProps = async (context) => {
       car: true
     }
   });
+
+  const navLinks = await prisma.$queryRaw
+    `(
+    select id
+    from Post
+    where car = 'Civic'
+    order by id desc
+    limit 1
+    )
+    UNION ALL
+    (
+    select id
+    from Post
+    where car = 'Wago'
+    order by id desc
+    limit 1
+    )`;
   
   return {
-    props: { post: makeSerializable(post), postLinks: makeSerializable(recentPostLinks)}
+    props: {
+      post: makeSerializable(post),
+      postLinks: makeSerializable(recentPostLinks),
+      navLinks: makeSerializable(navLinks)
+    }
   }
 }
 

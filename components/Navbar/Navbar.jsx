@@ -1,8 +1,6 @@
 import NextLink from 'next/link';
 import React, { useState, useEffect, useContext } from 'react';
 import styles from './Navbar.module.css';
-// import prisma from '../../lib/prisma';
-import { makeSerializable } from '../../lib/util';
 import { ThemeContext } from '../../lib/ThemeContext';
 
 const Navbar = (props) => {
@@ -30,17 +28,6 @@ const Navbar = (props) => {
     <>
       <div className={styles.coverImgContainer}></div>
       <nav className={styles.navbar}>
-        {/* <button
-          className='navbar-toggler'
-          type='button'
-          data-toggle='collapse'
-          data-target='#navbarCollapse'
-          aria-controls='navbarCollapse'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-        >
-          <span className='navbar-toggler-icon'></span>
-        </button> */}
         <ul className={styles.navbarList}>
           <li className={styles.navbarItem}>
             <NextLink href='/' >
@@ -54,12 +41,12 @@ const Navbar = (props) => {
         </ul>
         <ul className={styles.navbarList}>
           <li className={styles.navbarItem}>
-            <NextLink href={`/p/${props.civicLink}`}>
+            <NextLink href={{ pathname: `/p/${props.civicLink}`, query: { car: 'Civic' } }}>
               Civic
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={`/p/${props.wagoLink}`}>
+            <NextLink href={{ pathname: `/p/${props.wagoLink}`, query: { car: 'Wago' } }}>
               Wago
             </NextLink>
           </li>
