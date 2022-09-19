@@ -40,6 +40,9 @@
 .postLinks:hover {
   text-decoration: none;
 }
+.postLinksActive {
+  font-weight: bold;
+}
 
 .vppSelect {
   width: 100%;

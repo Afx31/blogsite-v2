@@ -18,3 +18,9 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+@media (max-width: 1100px) {
+  .vppContainer {
+    margin: 0 120px;
+  }
+}

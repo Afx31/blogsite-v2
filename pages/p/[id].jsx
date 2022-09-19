@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import prisma from '../../lib/prisma';
 import { makeSerializable } from '../../lib/util'
 import styles from '../../styles/Post.module.css';
@@ -10,6 +11,7 @@ import Layout from '../../components/Layout';
 import Footer from '../../components/Footer/Footer';
 
 const ViewPostPage = (props) => {
+  const currentRouter = `/p/${props.post.id}`;
 
   return props === null || props === undefined ? (
     <Spinner />
@@ -29,11 +31,14 @@ const ViewPostPage = (props) => {
                 <>
                   <li>
                     <NextLink
+                      key={post.id} 
                       href={`/p/${post.id}`}
-                      className={styles.postLinks}
-                      activeStyle={{ fontWeight: 'bold' }}
                     >
-                      {post.title}
+                      <a
+                        className={`${styles.postLinks} ${currentRouter === `/p/${post.id}` ? `${styles.postLinksActive}` : ''} `}
+                      >
+                        {post.title}
+                      </a>
                     </NextLink>
                   </li>
                 </>
@@ -41,23 +46,18 @@ const ViewPostPage = (props) => {
             </ul>
           </div>
         </div>
-        {/* <div className={styles.vppPaneLeftMobile}>
+        <div className={styles.vppPaneLeftMobile}>
           <h1>{props.post.car}</h1>
           <hr className={styles.dropdownDivider}/>
           <h5>RECENT POSTS</h5>
           <div className={styles.threadPostLinks}>
-            {currentPost && (
-              <NextLink to={`/p/${currentPost}`} />
-            )}
-            <select className={styles.vppSelect} defaultValue=''>
-              {postLinks.map((post) => {
-                if (postLinks[0]._id === post._id)
-                  return (<option key={post._id} value={post.slug}>{post.title}</option>)
-                return <option key={post._id} value={post.slug}>{post.title}</option>
+            <select className={styles.vppSelect} defaultValue={props.post.id} onChange={(e) => Router.push('/p/[id]', `/p/${e.target.value}`)}>
+              {props.postLinks.map((post) => {
+                return <option key={post.id} value={post.id}>{post.title}</option>
               })}
             </select>
           </div>
-        </div> */}
+        </div>
         <div className={styles.vppPaneRight}>
           <PostContentBody post={props.post} />
         </div>

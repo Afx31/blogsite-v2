@@ -39,7 +39,7 @@ const Home = (props) => {
       <Head>
         <title>Blogsite</title>
         <meta name="description" content="Created by Afx31" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <Navbar civicLink={civicId} wagoLink={wagoId} />
       <div className={styles.container}>
@@ -61,7 +61,11 @@ const Home = (props) => {
 }
 
 export const getServerSideProps = async () => {
-  const posts = await prisma.post.findMany();
+  const posts = await prisma.post.findMany({
+    orderBy: {
+      id: 'desc'
+    }
+  });
 
   const postLinks = await prisma.$queryRaw
     `(

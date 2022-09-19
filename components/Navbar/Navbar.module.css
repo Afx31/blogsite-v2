@@ -16,8 +16,9 @@
   align-items: center;
 }
 
-.navbar:ogo {
-  padding: 8px;
+.navbarLogo {
+  cursor: pointer;
+  padding-top: 7px;
 }
 
 .navbarList {
