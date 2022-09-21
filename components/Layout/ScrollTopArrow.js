@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 const ScrollTopArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 960px)').matches);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' ? window.matchMedia('(max-width: 960px)').matches : ''
+  );
 
   useEffect(() => {
     window
@@ -21,11 +23,11 @@ const ScrollTopArrow = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  window.addEventListener('scroll', checkScrollTop);
+  typeof window !== 'undefined' ? window.addEventListener('scroll', checkScrollTop) : '';
 
   return (
     <i className='fas fa-arrow-circle-up scrollTop fa-4x' onClick={scrollTop}
-        style={{display: showScroll && !isMobile ? 'flex' : 'none'}} />
+      style={{display: showScroll && !isMobile ? 'flex' : 'none'}} />
   )
 }
 

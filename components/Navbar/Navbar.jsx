@@ -21,7 +21,7 @@ const Navbar = (props) => {
         </svg>
       </div>
     </div>
-  );
+  )
 
   return (
     <>
