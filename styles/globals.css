@@ -28,8 +28,7 @@ body {
 }
 
 .App {
-  /* background-color: var(--background); */
-  background-color: #181A1B;
+  background-color: var(--background);
   color: var(--text-primary);
   --background-secondary: #343A40;
   --background-tertiary: #E2E2E2;

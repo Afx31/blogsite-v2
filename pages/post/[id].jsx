@@ -9,7 +9,7 @@ import PostContentBody from '../../components/PostComponents/PostContentBody/Pos
 import Spinner from '../../components/Layout/Spinner';
 
 const ViewPostPage = (props) => {
-  const currentRouter = `/p/${props.post.id}`;
+  const currentRouter = `/post/${props.post.id}`;
 
   return props === null || props === undefined ? (
     <Spinner />
@@ -27,17 +27,15 @@ const ViewPostPage = (props) => {
           <div className={styles.threadPostLinks}>
             <ul>
               {props.postLinks.map((post) => (
-                <>
-                  <li>
-                    <NextLink key={post.id} href={{ pathname: `/p/${post.id}`, query: { car: post.car } }}>
-                      <a
-                        className={`${styles.postLinks} ${currentRouter === `/p/${post.id}` ? `${styles.postLinksActive}` : ''} `}
-                      >
-                        {post.title}
-                      </a>
-                    </NextLink>
-                  </li>
-                </>
+                <li key={post.id}>
+                  <NextLink key={post.id} href={{ pathname: `/post/${post.id}`, query: { car: post.car } }}>
+                    <a
+                      className={`${styles.postLinks} ${currentRouter === `/post/${post.id}` ? `${styles.postLinksActive}` : ''} `}
+                    >
+                      {post.title}
+                    </a>
+                  </NextLink>
+                </li>
               ))}
             </ul>
           </div>
@@ -47,7 +45,7 @@ const ViewPostPage = (props) => {
           <hr className={styles.dropdownDivider}/>
           <h5>RECENT POSTS</h5>
           <div className={styles.threadPostLinks}>
-            <select className={styles.vppSelect} defaultValue={props.post.id} onChange={(e) => Router.push('/p/[id]', `/p/${e.target.value}`)}>
+            <select className={styles.vppSelect} defaultValue={props.post.id} onChange={(e) => Router.push('/post/[id]', `/post/${e.target.value}`)}>
               {props.postLinks.map((post) => {
                 return <option key={post.id} value={post.id}>{post.title}</option>
               })}

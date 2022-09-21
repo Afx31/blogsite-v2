@@ -11,7 +11,7 @@ const CardDisplay = ({ post: { id, car, thumbnail, title, description } }) => (
       <button
         className={styles.readmoreBtn}
         onClick={() => Router.push({
-          pathname: `/p/${id}`,
+          pathname: `/post/${id}`,
           query: { car: car }
         })}
       >

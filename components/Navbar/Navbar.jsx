@@ -4,19 +4,18 @@ import styles from './Navbar.module.css';
 import { ThemeContext } from '../../lib/ThemeContext';
 
 const Navbar = (props) => {
-  // const [darkMode, setDarkMode] = useContext(ThemeContext);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useContext(ThemeContext);
 
   const darkModeBtn = (
     <div
       className={`${styles.themeBtnContainer} ${darkMode ? styles.themeBtnDarkmode : ''} ${darkMode ? styles.themeBtnActive : ''}`}
       onClick={() => setDarkMode(!darkMode)}
     >
-      <div className='themeBtn-button'>
-        <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='feather feather-moon themeBtn-icon'>
+      <div className={styles.themeBtnButton}>
+        <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className={styles.themeBtnIcon}>
           <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path>
         </svg>
-        <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='feather feather-sun themeBtn-icon'>
+        <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className={styles.themeBtnIcon}>
           <circle cx='12' cy='12' r='5'></circle><line x1='12' y1='1' x2='12' y2='3'></line><line x1='12' y1='21' x2='12' y2='23'></line><line x1='4.22' y1='4.22' x2='5.64' y2='5.64'></line><line x1='18.36' y1='18.36' x2='19.78' y2='19.78'>
             </line><line x1='1' y1='12' x2='3' y2='12'></line><line x1='21' y1='12' x2='23' y2='12'></line><line x1='4.22' y1='19.78' x2='5.64' y2='18.36'></line><line x1='18.36' y1='5.64' x2='19.78' y2='4.22'></line>
         </svg>
@@ -41,22 +40,22 @@ const Navbar = (props) => {
         </ul>
         <ul className={styles.navbarList}>
           <li className={styles.navbarItem}>
-            <NextLink href={{ pathname: `/p/${props.civicLink}`, query: { car: 'Civic' } }}>
+            <NextLink href={{ pathname: `/post/${props.civicLink}`, query: { car: 'Civic' } }}>
               Civic
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={{ pathname: `/p/${props.wagoLink}`, query: { car: 'Wago' } }}>
+            <NextLink href={{ pathname: `/post/${props.wagoLink}`, query: { car: 'Wago' } }}>
               Wago
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={`/p/`}>
+            <NextLink href={`/post/`}>
               Frogo
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={`/p/`}>
+            <NextLink href={`/post/`}>
               EF9
             </NextLink>
           </li>
@@ -70,7 +69,7 @@ const Navbar = (props) => {
         </ul>
       </nav>
     </>
-  )
+  );
 }
 
 export default Navbar;
