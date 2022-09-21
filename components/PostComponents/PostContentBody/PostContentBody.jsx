@@ -3,8 +3,6 @@ import styles from './PostContentBody.module.css';
 import Moment from 'react-moment';
 import Spinner from '../../Layout/Spinner';
 import ReactMarkdown from 'react-markdown';
-// import CommentForm from '../Comments/CommentForm';
-// import CommentItem from '../Comments/CommentItem';
 
 function youtubeRender() {
   var itemToRender = document.querySelectorAll(`[src*='ytvid']`);
@@ -79,13 +77,6 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
       <div className={styles.reactMarkdown}>
         <ReactMarkdown children={content} />
       </div>
-      {/* <hr className={styles.postDropdownDivider} />          
-      <div className={styles.comments}>
-        {post.comments.map(comment => (
-          <CommentItem key={comment._id} comme  nt={comment} postId={id} />
-        ))}
-      </div>
-      <CommentForm postId={id} /> */}
     </>
   )
 }
