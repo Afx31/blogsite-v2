@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import styles from './Navbar.module.css';
 import { ThemeContext } from '../../lib/ThemeContext';
 
@@ -50,12 +50,12 @@ const Navbar = (props) => {
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={`/post/`}>
+            <NextLink href={{ pathname: `/post/${props.frogoLink}`, query: { car: 'Frogo' } }}>
               Frogo
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={`/post/`}>
+            <NextLink href={{ pathname: `/post/${props.ef9Link}`, query: { car: 'EF9' } }}>
               EF9
             </NextLink>
           </li>
@@ -69,7 +69,7 @@ const Navbar = (props) => {
         </ul>
       </nav>
     </>
-  );
+  )
 }
 
 export default Navbar;

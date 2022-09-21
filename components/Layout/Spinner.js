@@ -9,6 +9,6 @@ const Spinner = () => (
       alt='Loading...'
     />
   </Fragment>
-);
+)
 
 export default Spinner;

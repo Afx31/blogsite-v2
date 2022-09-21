@@ -88,6 +88,6 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
       <CommentForm postId={id} /> */}
     </>
   )
-};
+}
 
 export default PostContentBody;

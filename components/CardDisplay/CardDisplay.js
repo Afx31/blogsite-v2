@@ -19,6 +19,6 @@ const CardDisplay = ({ post: { id, car, thumbnail, title, description } }) => (
       </button>
     </div>
   </div>
-);
+)
 
 export default CardDisplay;

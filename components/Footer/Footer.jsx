@@ -7,7 +7,7 @@ const Footer = () => {
         <p>&copy; Will Mitchell Codes</p>
       </div>
     </footer>
-  );
-};
+  )
+}
 
 export default Footer;

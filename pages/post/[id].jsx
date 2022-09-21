@@ -1,5 +1,4 @@
 import styles from '../../styles/Post.module.css';
-import React from 'react';
 import Router from 'next/router';
 import prisma from '../../lib/prisma';
 import Layout from '../../components/Layout';
@@ -18,6 +17,8 @@ const ViewPostPage = (props) => {
     <Layout
       civicLink={props.navLinks[0].id}
       wagoLink={props.navLinks[1].id}
+      frogoLink={props.navLinks[2].id}
+      ef9Link={props.navLinks[3].id}
     >
       <div className={styles.vppContainer}>
         <div className={styles.vppPaneLeft}>
@@ -59,13 +60,13 @@ const ViewPostPage = (props) => {
      </Layout>
     </>
   )
-};
+}
 
 export const getServerSideProps = async (context) => {
   const post = await prisma.post.findUnique({
     where: { id: Number(context.params.id) }
-  });
-
+  })
+  
   const recentPostLinks = await prisma.post.findMany({
     where: {
       car: context.query.car
@@ -78,7 +79,7 @@ export const getServerSideProps = async (context) => {
       title: true,
       car: true
     }
-  });
+  })
 
   const navLinks = await prisma.$queryRaw
     `(
@@ -93,6 +94,22 @@ export const getServerSideProps = async (context) => {
     select id
     from Post
     where car = 'Wago'
+    order by id desc
+    limit 1
+    )
+    UNION ALL
+    (
+    select id
+    from Post
+    where car = 'Frogo'
+    order by id desc
+    limit 1
+    )
+    UNION ALL
+    (
+    select id
+    from Post
+    where car = 'EF9'
     order by id desc
     limit 1
     )`;

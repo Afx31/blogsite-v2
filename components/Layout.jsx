@@ -17,12 +17,14 @@ const Layout = (props) => {
         <Navbar
           civicLink={props.civicLink}
           wagoLink={props.wagoLink}
+          frogoLink={props.frogoLink}
+          ef9Link={props.ef9Link}
         />
         {props.children}
         <Footer />
       </div>
     </div>
-  );
+  )
 }
 
 export default Layout;
