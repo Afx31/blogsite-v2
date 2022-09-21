@@ -10,12 +10,12 @@ datasource db {
 }
 
 model Post {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
   title       String
   slug        String
   car         String
   thumbnail   String
   description String
-  content     String?
+  content     String?   @db.VarChar(10000)
 }

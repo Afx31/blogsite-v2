@@ -1,0 +1,71 @@
+.postDate {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.postDateFormat {
+  font-weight: bold;
+}
+
+.postImg {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.postDropdownDivider {
+  margin: 4rem 0;
+  border: 1px solid var(--background-secondary);
+}
+
+
+/* -------- Comments styling -------- */
+.comments {
+  margin-bottom: 3rem;
+  word-wrap: break-word;
+}
+
+
+/* -------- Markdown styling -------- */
+.reactMarkdown {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Image bio text = h6 */
+.reactMarkdown h6 {
+  font-size: 13px;
+  padding-bottom: 20px;
+}
+
+.reactMarkdown img {
+  width: 100%;
+  height: 100%;
+}
+
+.reactMarkdown img[src*='#3-row-img'] {
+  width: 33%;
+  height: 33%;
+}
+
+.reactMarkdown img[src*='#4-row-img'] {
+  width: 24.5%;
+  height: 24.5%;
+}
+
+/* .reactMarkdown img[src*='carouselimg'] {
+  width: 95%;
+  height: 95%;
+} */
+
+.reactMarkdown img[src*='carouseldot'] {
+  height: 20%;
+  width: 20%;
+}
+
+@media (max-width: 500px) {
+  .reactMarkdown iframe {
+    max-width: 100%;
+  }
+}
