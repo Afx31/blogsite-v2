@@ -64,28 +64,25 @@ const ViewPostPage = (props) => {
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  // Call an external API endpoint to get posts
   const res = await await prisma.post.findMany()
   const posts = await makeSerializable(res)
 
-  // Get the paths we want to pre-render based on posts
   const paths = posts.map((post) => ({
-    params: { id: post.id.toString(), car: post.car  }
+    params: { id: post.id.toString() }
   }))
 
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
   return { paths, fallback: false }
 }
 
 export const getStaticProps = async ({ params, query }) => {
+  
   const post = await prisma.post.findUnique({
     where: { id: Number(params.id) }
   })
   
   const recentPostLinks = await prisma.post.findMany({
     where: {
-      car: params.car
+      car: post.car
     },
     orderBy: {
       id: 'desc'
