@@ -71,11 +71,7 @@ export async function getStaticPaths() {
     params: { id: post.id.toString() }
   }));
 
-  return {
-    paths,
-    fallback: false,
-    revalidate: 600 // In seconds!
-  }
+  return { paths, fallback: false }
 }
 
 export const getStaticProps = async ({ params }) => {  
@@ -135,7 +131,8 @@ export const getStaticProps = async ({ params }) => {
       post: makeSerializable(post),
       postLinks: makeSerializable(recentPostLinks),
       navLinks: makeSerializable(navLinks)
-    }
+    },
+    revalidate: 600 // In seconds!
   }
 }
 
