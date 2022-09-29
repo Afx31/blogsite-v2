@@ -71,6 +71,7 @@ export async function getStaticPaths() {
   // Get the paths we want to pre-render based on posts
   const paths = posts.map((post) => ({
     params: { id: post.id.toString() },
+    query: { car: post.car }
   }))
 
   // We'll pre-render only these paths at build time.
@@ -78,14 +79,14 @@ export async function getStaticPaths() {
   return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, query }) => {
   const post = await prisma.post.findUnique({
     where: { id: Number(params.id) }
   })
   
   const recentPostLinks = await prisma.post.findMany({
     where: {
-      car: context.query.car
+      car: query.car
     },
     orderBy: {
       id: 'desc'
