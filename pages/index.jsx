@@ -3,14 +3,8 @@ import prisma from '../lib/prisma';
 import Layout from '../components/Layout';
 import { makeSerializable } from '../lib/util'
 import CardDisplay from '../components/CardDisplay/CardDisplay';
-import { useEffect } from 'react';
 
 const Home = (props) => {
-  
-  useEffect(() => {
-    console.log('test:',props)
-  }, [])
-  
 
 return(
   <Layout
@@ -19,8 +13,7 @@ return(
     frogoLink={props.navLinks[2].id}
     ef9Link={props.navLinks[3].id}
   >
-    <p>test</p>
-    {/* <div className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.innerContainer}>
         <h1>Latest Posts</h1>
         <div className={styles.cardContainer}>
@@ -32,7 +25,7 @@ return(
           ))}
         </div>
       </div>
-    </div> */}
+    </div>
   </Layout>
 )}
 
