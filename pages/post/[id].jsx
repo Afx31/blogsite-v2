@@ -66,7 +66,7 @@ const ViewPostPage = (props) => {
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
   const res = await await prisma.post.findMany()
-  const posts = await res.json()
+  const posts = await makeSerializable(res)
 
   // Get the paths we want to pre-render based on posts
   const paths = posts.map((post) => ({
