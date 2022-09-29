@@ -6,7 +6,7 @@ import CardDisplay from '../components/CardDisplay/CardDisplay';
 
 const Home = (props) => {
 
-return(
+return (
   <Layout
     civicLink={props.navLinks[0].id}
     wagoLink={props.navLinks[1].id}
