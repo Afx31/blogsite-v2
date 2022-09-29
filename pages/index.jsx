@@ -3,29 +3,47 @@ import prisma from '../lib/prisma';
 import Layout from '../components/Layout';
 import { makeSerializable } from '../lib/util'
 import CardDisplay from '../components/CardDisplay/CardDisplay';
+import { useEffect } from 'react';
 
-const Home = (props) => (
-  <Layout
-    civicLink={props.navLinks[0].id}
-    wagoLink={props.navLinks[1].id}
-    frogoLink={props.navLinks[2].id}
-    ef9Link={props.navLinks[3].id}
-  >
-    <div className={styles.container}>
-      <div className={styles.innerContainer}>
-        <h1>Latest Posts</h1>
-        <div className={styles.cardContainer}>
-          {props.posts.map((post) => (
-            <CardDisplay
-              key={post.id}
-              post={post}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  </Layout>
-)
+const Home = (props) => {
+  
+  useEffect(() => {
+    console.log('test:',props)
+  }, [])
+
+  const temp = async () => {
+    console.log('button:',props)
+  }
+  
+
+return(
+  // <Layout
+  //   civicLink={props.navLinks[0].id}
+  //   wagoLink={props.navLinks[1].id}
+  //   frogoLink={props.navLinks[2].id}
+  //   ef9Link={props.navLinks[3].id}
+  // >
+  //   <div className={styles.container}>
+  //     <div className={styles.innerContainer}>
+  //       <h1>Latest Posts</h1>
+  //       <div className={styles.cardContainer}>
+  //         {props.posts.map((post) => (
+  //           <CardDisplay
+  //             key={post.id}
+  //             post={post}
+  //           />
+  //         ))}
+  //       </div>
+  //     </div>
+  //   </div>
+  // </Layout>
+  <>
+    <p>test</p>
+    <button onClick={temp}>
+      test1
+    </button>
+  </>
+)}
 
 export const getServerSideProps = async () => {
   const posts = await prisma.post.findMany({
