@@ -85,7 +85,7 @@ export const getStaticProps = async ({ params, query }) => {
   
   const recentPostLinks = await prisma.post.findMany({
     where: {
-      car: params.car ? params.car : query.car
+      car: params.car
     },
     orderBy: {
       id: 'desc'
