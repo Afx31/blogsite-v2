@@ -23,6 +23,7 @@ function youtubeRender() {
 
 const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
   var slideIndex = 1;
+  
   useEffect(() => {
     if (id !== null) {
       youtubeRender();
@@ -75,7 +76,9 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
         </Moment>
       </p>
       <div className={styles.reactMarkdown}>
-        <ReactMarkdown children={content} />
+        <ReactMarkdown>
+          {content}
+        </ReactMarkdown>
       </div>
     </>
   )
