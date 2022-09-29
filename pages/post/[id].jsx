@@ -71,7 +71,11 @@ export async function getStaticPaths() {
     params: { id: post.id.toString() }
   }));
 
-  return { paths, fallback: false }
+  return {
+    paths,
+    fallback: false,
+    revalidate: 600 // seconds
+  }
 }
 
 export const getStaticProps = async ({ params }) => {  
