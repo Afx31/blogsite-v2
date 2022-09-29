@@ -62,7 +62,7 @@ const ViewPostPage = (props) => {
   )
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const post = await prisma.post.findUnique({
     where: { id: Number(context.params.id) }
   })
