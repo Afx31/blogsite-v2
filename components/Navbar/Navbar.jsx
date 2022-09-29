@@ -5,7 +5,6 @@ import { ThemeContext } from '../../lib/ThemeContext';
 
 const Navbar = (props) => {
   const [darkMode, setDarkMode] = useContext(ThemeContext);
-  // vercel deployment test
 
   const darkModeBtn = (
     <div
