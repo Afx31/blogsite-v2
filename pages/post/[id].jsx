@@ -66,15 +66,20 @@ const ViewPostPage = (props) => {
 export async function getStaticPaths() {
   const res = await await prisma.post.findMany();
   const posts = await makeSerializable(res);
+
+  console.log('--- test 2 ---' + res)
+  console.log('--- test 3 ---' + posts)
   
   const paths = posts.map((post) => ({
     params: { id: post.id.toString() }
   }));
 
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }) => {  
+export const getStaticProps = async ({ params }) => {
+  console.log('--- test 1 ---' + params)
+
   const post = await prisma.post.findUnique({
     where: { id: Number(params.id) }
   })
