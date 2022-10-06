@@ -6,11 +6,12 @@ import NextLink from 'next/link';
 import { makeSerializable } from '../../lib/util'
 import PostContentBody from '../../components/PostComponents/PostContentBody/PostContentBody';
 import Spinner from '../../components/Layout/Spinner';
+import { useRouter } from 'next/router'
 
-const ViewPostPage = (props) => {
-  const currentRouter = `/post/${props.post.id}`;
+const Post = (props) => {
+  const router = useRouter();
 
-  return props === null || props === undefined ? (
+  return router.isFallback ? (
     <Spinner />
   ) : (
     <>
@@ -29,9 +30,9 @@ const ViewPostPage = (props) => {
             <ul>
               {props.postLinks.map((post) => (
                 <li key={post.id}>
-                  <NextLink key={post.id} href={{ pathname: `/post/${post.id}`, query: { car: post.car } }}>
+                  <NextLink key={post.id} href={{ pathname: `/post/${post.id}` }}>
                     <a
-                      className={`${styles.postLinks} ${currentRouter === `/post/${post.id}` ? `${styles.postLinksActive}` : ''} `}
+                      className={`${styles.postLinks} ${router.asPath === `/post/${post.id}` ? `${styles.postLinksActive}` : ''} `}
                     >
                       {post.title}
                     </a>
@@ -64,11 +65,8 @@ const ViewPostPage = (props) => {
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  const res = await await prisma.post.findMany();
+  const res = await prisma.post.findMany();
   const posts = await makeSerializable(res);
-
-  console.log('--- test 2 ---' + res)
-  console.log('--- test 3 ---' + posts)
   
   const paths = posts.map((post) => ({
     params: { id: post.id.toString() }
@@ -77,9 +75,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }) => {
-  console.log('--- test 1 ---' + params)
-
+export async function getStaticProps({ params }) {
   const post = await prisma.post.findUnique({
     where: { id: Number(params.id) }
   })
@@ -130,7 +126,7 @@ export const getStaticProps = async ({ params }) => {
     order by id desc
     limit 1
     )`;
-  
+
   return {
     props: {
       post: makeSerializable(post),
@@ -141,4 +137,4 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-export default ViewPostPage;
+export default Post;
