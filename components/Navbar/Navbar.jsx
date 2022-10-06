@@ -40,22 +40,22 @@ const Navbar = (props) => {
         </ul>
         <ul className={styles.navbarList}>
           <li className={styles.navbarItem}>
-            <NextLink href={{ pathname: `/post/${props.civicLink}`, query: { car: 'Civic' } }}>
+            <NextLink href={{ pathname: `/post/${props.civicLink}` }}>
               Civic
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={{ pathname: `/post/${props.wagoLink}`, query: { car: 'Wago' } }}>
+            <NextLink href={{ pathname: `/post/${props.wagoLink}` }}>
               Wago
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={{ pathname: `/post/${props.frogoLink}`, query: { car: 'Frogo' } }}>
+            <NextLink href={{ pathname: `/post/${props.frogoLink}` }}>
               Frogo
             </NextLink>
           </li>
           <li className={styles.navbarItem}>
-            <NextLink href={{ pathname: `/post/${props.ef9Link}`, query: { car: 'EF9' } }}>
+            <NextLink href={{ pathname: `/post/${props.ef9Link}` }}>
               EF9
             </NextLink>
           </li>
