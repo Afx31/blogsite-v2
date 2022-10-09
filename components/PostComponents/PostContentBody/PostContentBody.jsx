@@ -22,8 +22,9 @@ function youtubeRender() {
 }
 
 const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
+  var newContent = content.replaceAll('  ', '  \n')
   var slideIndex = 1;
-  
+
   useEffect(() => {
     if (id !== null) {
       youtubeRender();
@@ -76,8 +77,8 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
         </Moment>
       </p>
       <div className={styles.reactMarkdown}>
-        <ReactMarkdown>
-          {content}
+        <ReactMarkdown className={styles.linebreak}>
+          {newContent}
         </ReactMarkdown>
       </div>
     </>
