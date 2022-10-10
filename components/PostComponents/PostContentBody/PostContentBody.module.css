@@ -44,8 +44,9 @@
 }
 
 .reactMarkdown img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .reactMarkdown img[src*='#3-row-img'] {
@@ -58,14 +59,16 @@
   height: 24.5%;
 }
 
-.reactMarkdown img[src*='carouselimg'] {
-  width: 95%;
-  height: 95%;
-}
+/* --- Carousel Img --- */
 
 .reactMarkdown img[src*='carouseldot'] {
-  height: 20%;
   width: 20%;
+  display: inline;
+}
+
+.reactMarkdown img[src*='carouseldot5'] {
+  width: 19.6%;
+  display: inline;
 }
 
 @media (max-width: 500px) {
