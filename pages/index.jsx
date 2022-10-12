@@ -5,7 +5,7 @@ import { makeSerializable } from '../lib/util'
 import CardDisplay from '../components/CardDisplay/CardDisplay';
 
 const Home = (props) => {
-
+console.log(props)
 return (
   <Layout
     civicLink={props.navLinks[0].id}
@@ -30,44 +30,48 @@ return (
 )}
 
 export const getServerSideProps = async () => {
-  const posts = await prisma.post.findMany({
-    orderBy: {
-      id: 'desc'
-    }
-  })
+  const posts = await prisma.$queryRaw
+  `
+    SELECT *
+    FROM Post
+    ORDER BY id DESC
+    LIMIT 10
+  `;
 
   const navLinks = await prisma.$queryRaw
-    `(
-    select id
-    from Post
-    where car = 'Civic'
-    order by id desc
-    limit 1
+  `
+    (
+    SELECT id
+    FROM Post
+    WHERE car = 'Civic'
+    ORDER BY id DESC
+    LIMIT 1
     )
     UNION ALL
     (
-    select id
-    from Post
-    where car = 'Wago'
-    order by id desc
-    limit 1
+    SELECT id
+    FROM Post
+    WHERE car = 'Wago'
+    ORDER BY id DESC
+    LIMIT 1
     )
     UNION ALL
     (
-    select id
-    from Post
-    where car = 'Frogo'
-    order by id desc
-    limit 1
+    SELECT id
+    FROM Post
+    WHERE car = 'Frogo'
+    ORDER BY id DESC
+    LIMIT 1
     )
     UNION ALL
     (
-    select id
-    from Post
-    where car = 'EF9'
-    order by id desc
-    limit 1
-    )`;
+    SELECT id
+    FROM Post
+    WHERE car = 'EF9'
+    ORDER BY id DESC
+    LIMIT 1
+    )
+  `;
   
   return {
     props: {
