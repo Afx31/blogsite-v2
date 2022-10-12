@@ -3,10 +3,10 @@ import Router from 'next/router';
 import prisma from '../../lib/prisma';
 import Layout from '../../components/Layout';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router'
 import { makeSerializable } from '../../lib/util'
 import PostContentBody from '../../components/PostComponents/PostContentBody/PostContentBody';
 import Spinner from '../../components/Layout/Spinner';
-import { useRouter } from 'next/router'
 
 const Post = (props) => {
   const router = useRouter();
@@ -17,9 +17,9 @@ const Post = (props) => {
     <>
     <Layout
       civicLink={props.navLinks[0].id}
-      wagoLink={props.navLinks[1].id}
+      ef9Link={props.navLinks[1].id}
       frogoLink={props.navLinks[2].id}
-      ef9Link={props.navLinks[3].id}
+      wagoLink={props.navLinks[3].id}
     >
       <div className={styles.vppContainer}>
         <div className={styles.vppPaneLeft}>
@@ -95,37 +95,12 @@ export async function getStaticProps({ params }) {
   })
 
   const navLinks = await prisma.$queryRaw
-    `(
-    select id
-    from Post
-    where car = 'Civic'
-    order by id desc
-    limit 1
-    )
-    UNION ALL
-    (
-    select id
-    from Post
-    where car = 'Wago'
-    order by id desc
-    limit 1
-    )
-    UNION ALL
-    (
-    select id
-    from Post
-    where car = 'Frogo'
-    order by id desc
-    limit 1
-    )
-    UNION ALL
-    (
-    select id
-    from Post
-    where car = 'EF9'
-    order by id desc
-    limit 1
-    )`;
+  `
+    SELECT car, max(id) as id
+    FROM Post
+    GROUP BY car
+    ORDER BY car;
+  `;
 
   return {
     props: {
