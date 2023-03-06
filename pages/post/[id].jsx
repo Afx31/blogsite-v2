@@ -108,7 +108,7 @@ export async function getStaticProps({ params }) {
       postLinks: makeSerializable(recentPostLinks),
       navLinks: makeSerializable(navLinks)
     },
-    revalidate: 600 // In seconds!
+    revalidate: 600 // In seconds
   }
 }
 
