@@ -65,11 +65,19 @@
 .reactMarkdown img[src*='carouseldot'] {
   width: 20%;
   display: inline;
+  margin-bottom: 10px;
 }
 
 .reactMarkdown img[src*='carouseldot5'] {
   width: 19.6%;
-  display: inline;
+}
+
+.reactMarkdown img[src*='carouseldot6'] {
+  width: 16.3%;
+}
+
+.reactMarkdown img[src*='carouseldot8'] {
+  width: 12.15%;
 }
 
 @media (max-width: 500px) {

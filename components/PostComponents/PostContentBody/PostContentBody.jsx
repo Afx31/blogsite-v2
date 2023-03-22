@@ -61,6 +61,7 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
         dots[i].className = dots[i].className.replace(' active', '');
   
       slides[slideIndex-1].style.display = 'block';
+      slides[slideIndex-1].style.marginBottom = '-30px';
       dots[slideIndex-1].className += ' active';
     }
   }
