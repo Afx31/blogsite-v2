@@ -29,13 +29,18 @@
   display: none;
 }
 
+.threadPostLinks h4 {
+  margin: 0;
+}
 .threadPostLinks ul {
   padding: 0 0.5rem 0 0;
   list-style-type: none;
 }
-
-.threadPostLinks li {
-  padding-bottom: 0.5rem;
+.monthlyPostList li {
+  padding-bottom: 0.1rem;
+}
+.monthlyPostList {
+  margin-bottom: 1rem;
 }
 
 .postLinks {
