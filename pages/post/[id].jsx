@@ -10,6 +10,79 @@ import Spinner from '../../components/Layout/Spinner';
 
 const Post = (props) => {
   const router = useRouter();
+  var sortedPosts;
+
+  const GetMonthText = (month) => {
+    var result;
+
+    switch(month) {
+      case '1':
+        result = 'January';
+        break;
+      case '2':
+        result = 'Febuary';
+        break;
+      case '3':
+        result = 'March';
+        break;
+      case '4':
+        result = 'April';
+        break;
+      case '5':
+        result = 'May';
+        break;
+      case '6':
+        result = 'June';
+        break;
+      case '7':
+        result = 'July';
+        break;
+      case '8':
+        result = 'August';
+        break;
+      case '9':
+        result = 'September';
+        break;
+      case '10':
+        result = 'October';
+        break;
+      case '11':
+        result = 'November';
+        break;
+      case '12':
+        result = 'December';
+        break;
+    }
+
+    return result;
+  }
+
+  const SortPostLinksByMonth = () => {
+    sortedPosts = props.postLinks.reduce((acc, post) => {
+      var date = new Date(post.createdAt);
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1; // Note: Month is 0-indexed, so we add 1 to get the actual month number
+      var key = `${year}-${month}`;
+      var group = acc.find((g) => g.key === key);
+
+      if (group) {
+        group.posts.push(post);
+      } else {
+        acc.push({ key, posts: [post] });
+      }
+
+      return acc;
+    }, [])
+      .sort((a, b) => (a.key < b.key ? 1 : -1))
+      .map((g) => ({
+        month: g.key.split("-")[1],
+        year: g.key.split("-")[0],
+        monthYearString: `${GetMonthText(g.key.split("-")[1])} ${g.key.split("-")[0]}`,
+        posts: g.posts
+      }));
+  }
+  
+  SortPostLinksByMonth();
 
   return router.isFallback ? (
     <Spinner />
@@ -26,17 +99,25 @@ const Post = (props) => {
           <h1>{props.post.car}</h1>
           <hr className={styles.dropdownDivider}/>
           <h5>RECENT POSTS</h5>
+
           <div className={styles.threadPostLinks}>
             <ul>
-              {props.postLinks.map((post) => (
-                <li key={post.id}>
-                  <NextLink key={post.id} href={{ pathname: `/post/${post.id}` }}>
-                    <a
-                      className={`${styles.postLinks} ${router.asPath === `/post/${post.id}` ? `${styles.postLinksActive}` : ''} `}
-                    >
-                      {post.title}
-                    </a>
-                  </NextLink>
+              {sortedPosts.map((groupedPeriod) => (
+                <li key={groupedPeriod.key}>
+                  <h4>{groupedPeriod.monthYearString}</h4>
+                  <ul className={styles.monthlyPostList}>
+                    {groupedPeriod.posts.map((post) => (
+                      <li className={styles.monthlyPostListLi} key={post.id}>
+                        <NextLink key={post.id} href={{ pathname: `/post/${post.id}` }}>
+                          <a
+                            className={`${styles.postLinks} ${router.asPath === `/post/${post.id}` ? `${styles.postLinksActive}` : ''} `}
+                          >
+                            {post.title}
+                          </a>
+                        </NextLink>
+                    </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
             </ul>
@@ -90,7 +171,8 @@ export async function getStaticProps({ params }) {
     select: {
       id: true,
       title: true,
-      car: true
+      car: true,
+      createdAt: true
     }
   })
 
