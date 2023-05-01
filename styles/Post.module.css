@@ -24,23 +24,33 @@
 /* LEFT PANE */
 .vppPaneLeft {
 }
-
 .vppPaneLeftMobile {
   display: none;
 }
 
-.threadPostLinks h4 {
-  margin: 0;
+.groupedContent {
+  padding: 0;
 }
-.threadPostLinks ul {
-  padding: 0 0.5rem 0 0;
+.groupedHeading {
   list-style-type: none;
 }
-.monthlyPostList li {
-  padding-bottom: 0.1rem;
+.threadPostLinks h4 {
+  margin: 0 0 0.2rem 0;
+  padding: 0;
+  font-size: 0.9rem;
 }
 .monthlyPostList {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  padding-inline-start: 25px; 
+}
+.monthlyPostList li {
+  padding: 0 0.5rem 0.1rem 0;
+  list-style-type: none;
+}
+.monthlyPostList li:before {
+  content: '\2012';
+  position: absolute;
+  margin-left: -15px;
 }
 
 .postLinks {

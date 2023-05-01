@@ -28,7 +28,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .content p {
   font-size: 20px;
   margin: 0 0 16px;
@@ -59,9 +58,5 @@
 @media (max-width: 960px) {
   .container {
     min-width: 100%;    
-  }
-
-  .container h1 {
-    font-size: 40px;
   }
 }
