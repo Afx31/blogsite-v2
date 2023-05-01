@@ -99,15 +99,14 @@ const Post = (props) => {
           <h1>{props.post.car}</h1>
           <hr className={styles.dropdownDivider}/>
           <h5>RECENT POSTS</h5>
-
           <div className={styles.threadPostLinks}>
-            <ul>
+            <ul className={styles.groupedContent}>
               {sortedPosts.map((groupedPeriod) => (
-                <li key={groupedPeriod.key}>
+                <li className={styles.groupedHeading} key={groupedPeriod.key}>
                   <h4>{groupedPeriod.monthYearString}</h4>
                   <ul className={styles.monthlyPostList}>
                     {groupedPeriod.posts.map((post) => (
-                      <li className={styles.monthlyPostListLi} key={post.id}>
+                      <li key={post.id}>
                         <NextLink key={post.id} href={{ pathname: `/post/${post.id}` }}>
                           <a
                             className={`${styles.postLinks} ${router.asPath === `/post/${post.id}` ? `${styles.postLinksActive}` : ''} `}
