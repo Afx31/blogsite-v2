@@ -17,7 +17,7 @@ function youtubeRender() {
     newItem.setAttribute('title', 'Temp title');
     newItem.setAttribute('frameborder', '0');
     newItem.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-    oldItem.parentNode.replaceChild(newItem, oldItem);
+    //oldItem.parentNode.replaceChild(newItem, oldItem);
   });
 }
 

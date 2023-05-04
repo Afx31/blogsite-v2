@@ -73,7 +73,6 @@ const Post = (props) => {
 
       return acc;
     }, [])
-      .sort((a, b) => (a.key < b.key ? 1 : -1))
       .map((g) => ({
         month: g.key.split("-")[1],
         year: g.key.split("-")[0],
