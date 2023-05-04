@@ -35,7 +35,7 @@ export const getServerSideProps = async () => {
     SELECT *
     FROM Post
     ORDER BY id DESC
-    LIMIT 10
+    LIMIT 9
   `;
 
   const navLinks = await prisma.$queryRaw
