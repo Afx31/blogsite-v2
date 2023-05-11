@@ -18,13 +18,11 @@
   border: 1px solid var(--background-secondary);
 }
 
-
 /* -------- Comments styling -------- */
 .comments {
   margin-bottom: 3rem;
   word-wrap: break-word;
 }
-
 
 /* -------- Markdown styling -------- */
 .linebreak {
@@ -61,7 +59,6 @@
 }
 
 /* --- Carousel Img --- */
-
 .reactMarkdown img[src*='carouseldot'] {
   width: 20%;
   display: inline;
