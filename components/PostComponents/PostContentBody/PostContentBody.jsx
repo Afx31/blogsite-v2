@@ -4,21 +4,19 @@ import Moment from 'react-moment';
 import Spinner from '../../Layout/Spinner';
 import ReactMarkdown from 'react-markdown';
 
-function youtubeRender() {
-  var itemToRender = document.querySelectorAll(`[src*='ytvid']`);
-  itemToRender.forEach(oldItem => {
-    var oldItemLink = oldItem.src.replace('#ytvid', '');
-    var oldItemId = oldItem.src.alt;
-    var newItem = document.createElement('iframe');
-    newItem.style.width = '560px';
-    newItem.style.height = '315px';
-    newItem.setAttribute('id', oldItemId);
-    newItem.setAttribute('src', oldItemLink);
-    newItem.setAttribute('title', 'Temp title');
-    newItem.setAttribute('frameborder', '0');
-    newItem.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-    //oldItem.parentNode.replaceChild(newItem, oldItem);
-  });
+const YouTubeEmbed = ({ src }) => {
+  return (
+    <iframe
+      style={{ display: 'block', margin: 'auto' }}
+      width='560'
+      height='315'
+      src={src}
+      frameBorder={0}
+      title='YouTube video player'
+      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+      allowFullScreen
+    />
+  );
 }
 
 const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
@@ -27,11 +25,10 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
 
   useEffect(() => {
     if (id !== null) {
-      youtubeRender();
       carouselRender(slideIndex);
     }
   }, [id]);
-  
+
   function currentSlide(n) {
     carouselRender(slideIndex = n)
   }
@@ -78,7 +75,21 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
         </Moment>
       </p>
       <div className={styles.reactMarkdown}>
-        <ReactMarkdown className={styles.linebreak}>
+        <ReactMarkdown
+          className={styles.linebreak}
+          components={{
+            a: ({ node, inline, children, href, ...props }) => {
+              const match = /^Youtube-Link$/.exec(children || "");
+              return !inline && match ? (
+                  <YouTubeEmbed src={href} />
+              ) : (
+                <a href={href} {...props}>
+                  {children}
+                </a>
+              );
+            },
+          }}
+        >
           {newContent}
         </ReactMarkdown>
       </div>
