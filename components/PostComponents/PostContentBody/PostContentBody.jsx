@@ -79,7 +79,7 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
           className={styles.linebreak}
           components={{
             a: ({ node, inline, children, href, ...props }) => {
-              const match = /^Youtube-Link$/.exec(children || "");
+              const match = /^YouTube-Link$/.exec(children || "");
               return !inline && match ? (
                   <YouTubeEmbed src={href} />
               ) : (
