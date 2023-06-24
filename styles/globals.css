@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
 * {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Oxygen', sans-serif;
 }
 
 #root {
@@ -19,17 +22,23 @@ body {
 
 .darkmode {
   --background: #181A1B;
-  --text-primary: #FFF;
+  --heading-prim: #C9C3BC;
+  --heading-sec: #E8E6E3;
+  --text-primary: #A8A095;
 }
 
 .lightmode {
   --background: #FFFF;
+  --heading-prim: #000;
+  --heading-sec: #000;
   --text-primary: #000;
 }
 
 .App {
   background-color: var(--background);
   color: var(--text-primary);
+  --heading-primary: var(--heading-prim);
+  --heading-secondary: var(--heading-sec);
   --background-secondary: #343A40;
   --background-tertiary: #E2E2E2;
   --text-secondary: #AAA;
@@ -45,6 +54,12 @@ h1 {
   line-height: 1.2;
   margin: 0px;
   margin-bottom: .5rem;
+}
+h1, h4, h5 {
+  color: var(--heading-primary);
+}
+h3 {
+  color: var(--heading-secondary);
 }
 
 .scrollTop {

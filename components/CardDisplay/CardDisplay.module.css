@@ -28,6 +28,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.content h1 {
+  color: #FFF;
+}
 .content p {
   font-size: 20px;
   margin: 0 0 16px;
