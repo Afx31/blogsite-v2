@@ -20,7 +20,7 @@
 
 /* -------- Markdown styling -------- */
 .linebreak {
-  /* white-space: pre-wrap; */
+  white-space: pre-wrap;
 }
 
 .reactMarkdown {
@@ -31,8 +31,12 @@
   max-width: 930px;
 }
 
+.reactMarkdown br {
+  content: '';
+  display: block;
+}
+
 .reactMarkdown p {
-  white-space: pre-wrap;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -42,7 +46,7 @@
 
 .reactMarkdown h3 {
   font-size: 18px;
-  margin: 10px 0px -20px 0px;
+  margin: 0px 0px -14px 0px;
 }
 
 /* Image bio text = h6 */
@@ -52,10 +56,11 @@
 }
 
 .reactMarkdown img {
+  display: block;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  margin-top: -10px;
 }
 
 .reactMarkdown img[src*='#3-row-img'] {
