@@ -101,7 +101,7 @@ const Post = (props) => {
           <div className={styles.threadPostLinks}>
             <ul className={styles.groupedContent}>
               {sortedPosts.map((groupedPeriod) => (
-                <li className={styles.groupedHeading} key={groupedPeriod.key}>
+                <li className={styles.groupedHeading} key={groupedPeriod.monthYearString}>
                   <h4>{groupedPeriod.monthYearString}</h4>
                   <ul className={styles.monthlyPostList}>
                     {groupedPeriod.posts.map((post) => (
