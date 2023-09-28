@@ -62,6 +62,11 @@ h3 {
   color: var(--heading-secondary);
 }
 
+/* To prevent the "linebreak" cssspacing out lists weirdly */
+ul {
+  white-space: normal;
+}
+
 .scrollTop {
   position: fixed;
   bottom: 100px;
