@@ -16,5 +16,5 @@ model Post {
   car         String
   thumbnail   String
   description String
-  content     String?   @db.VarChar(12000)
+  content     String?   @db.VarChar(14000)
 }
