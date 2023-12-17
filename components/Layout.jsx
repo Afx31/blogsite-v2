@@ -10,7 +10,7 @@ const Layout = (props) => {
   return (
     <div>
       <Head>
-        <title>Blogsite</title>
+        <title>Afx31 ~ Blog</title>
         <meta name='description' content='Created by Afx31' />
       </Head>
       <div className={`App ${darkMode ? 'darkmode' : 'lightmode'}`}>
