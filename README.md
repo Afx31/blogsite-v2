@@ -1,6 +1,6 @@
-## Car Blogsite
+## Car Blog
 
-I've created this Blogsite from scratch to host the build threads of my cars which have been previously posted on forums. "Ahh, the good ol days of forums"..
+I've created this Blog from scratch to host the build threads of my cars which have been previously posted on forums. "Ahh, the good ol days of forums"..
 
 With the decline of forum activity due to social media, they are slowly being decomissioned and sometimes users aren't informed, and their data is lost. This will allow me to keep record of every post myself, as I've copied/pasted & rewrote all the posts into markdown files, which are then rendered here. I'll keep various backups of the markdown files so they'll never be lost.
 
