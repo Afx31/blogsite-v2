@@ -1,13 +1,11 @@
-import styles from './Footer.module.css';
+import './Footer.css';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className={styles.container}>
-      <div className={styles.innerContainer}>
+    <footer className='container'>
+      <div className='innerContainer'>
         <p>&copy; Will Mitchell Codes</p>
       </div>
     </footer>
-  )
+  );
 }
-
-export default Footer;

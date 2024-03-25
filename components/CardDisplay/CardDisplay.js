@@ -1,21 +1,23 @@
-import Router from 'next/router';
-import styles from './CardDisplay.module.css';
+// import Router from 'next/router';
+import NextLink from 'next/link';
+import './CardDisplay.css';
 
-const CardDisplay = ({ post: { id, car, thumbnail, title, description } }) => (
-  <div className={styles.container}>
-    <div className={styles.layer} />
-    <img className={styles.img} src={thumbnail} alt='thumbnail' />
-    <div className={styles.content}>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <button
-        className={styles.readmoreBtn}
-        onClick={() => Router.push({ pathname: `/post/${id}` })}
-      >
-        READ MORE
-      </button>
+export default function CardDisplay({ post: { car, postId, thumbnail, title, description } }) {
+  return (
+    <div className='container'>
+      <div className='layer' />
+      <img className='img' src={thumbnail} alt='thumbnail' />
+      <div className='content'>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        {/* <button
+          className='readmoreBtn'
+          onClick={() => Router.push({ pathname: `/post/${car}/${postId}` })}
+        >
+          READ MORE
+        </button> */}
+        <NextLink href={`/post/${car}/${postId}`}>Button</NextLink>
+      </div>
     </div>
-  </div>
-)
-
-export default CardDisplay;
+  );
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './PostContentBody.module.css';
+import './PostContentBody.css';
 import Moment from 'react-moment';
 import Spinner from '../../Layout/Spinner';
 import ReactMarkdown from 'react-markdown';
@@ -19,7 +19,7 @@ const YouTubeEmbed = ({ src }) => {
   );
 }
 
-const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
+export default function PostContentBody({ post: {id, title, createdAt, content} }) {
   var newContent = content.replaceAll('  ', '  \n')
   var slideIndex = 1;
 
@@ -68,15 +68,15 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
   ) : (
     <>
       <h1>{title}</h1>
-      <p className={styles.postDate}>
+      <p className='postDate'>
         Posted on{' '}
-        <Moment format='DD MMMM, YYYY' className={styles.postDateFormat}>
+        <Moment format='DD MMMM, YYYY' className='postDateFormat'>
           {createdAt}
         </Moment>
       </p>
-      <div className={styles.reactMarkdown}>
+      <div className='reactMarkdown'>
         <ReactMarkdown
-          className={styles.linebreak}
+          className='linebreak'
           components={{
             a: ({ node, inline, children, href, ...props }) => {
               const match = /^YouTube-Link$/.exec(children || "");
@@ -94,7 +94,5 @@ const PostContentBody = ({ post: {id, title, createdAt, content} }) => {
         </ReactMarkdown>
       </div>
     </>
-  )
+  );
 }
-
-export default PostContentBody;
