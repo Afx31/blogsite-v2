@@ -1,16 +1,16 @@
-.container {
+.cdContainer {
   margin: 1rem;
   position: relative;
   max-width: 30%;
 }
 
-.img {
+.cdImg {
   display: block;
   width: 100%;
   border-radius: 0.2rem;
 }
 
-.layer {
+.cdLayer {
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
@@ -20,7 +20,7 @@
   border-radius: 0.2rem;
 }
 
-.content {
+.cdContent {
   position: absolute;
   color: var(--text-white);
   width: 90%;
@@ -28,15 +28,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.content h1 {
+.cdContent h1 {
   color: #FFF;
 }
-.content p {
+.cdContent p {
   font-size: 20px;
   margin: 0 0 16px;
 }
 
-.readmoreBtn {
+.cdReadmoreBtn {
   font-size: 16px;
   padding: 12px 20px;
   color: var(--text-white);
@@ -45,7 +45,7 @@
   background-color: transparent;
   cursor: pointer;
 }
-.readmoreBtn:hover {
+.cdReadmoreBtn:hover {
   color: #000;
   background-color: var(--text-white);
   border: 2px solid var(--text-white);
@@ -53,7 +53,7 @@
 }
 
 @media (max-width: 1100px) {
-  .content h1 {
+  .cdContent h1 {
     font-size: 30px;
   }
 }
