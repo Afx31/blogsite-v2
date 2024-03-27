@@ -35,6 +35,8 @@ import ReactMarkdown from 'react-markdown';
 
 //export default function PostContentBody({ post: {id, title, createdAt, content} }) {
 export default function PostContentBody({ post: {slug, content} }) {
+  var createdAt = '15 Apr 2020';
+
   // var newContent = content.replaceAll('  ', '  \n')
   // var slideIndex = 1;
 
@@ -81,13 +83,10 @@ export default function PostContentBody({ post: {slug, content} }) {
   return (
     <>
       <h1>{slug}</h1>
-      {/* <p className='postDate'>
-        Posted on{' '}
-        <Moment format='DD MMMM, YYYY' className='postDateFormat'>
-          {createdAt}
-        </Moment>
+      <p className='postDate'>
+        Posted on {createdAt}
       </p>
-      <div className='reactMarkdown'>
+      {/* <div className='reactMarkdown'>
         <ReactMarkdown
           className='linebreak'
           components={{
@@ -107,13 +106,28 @@ export default function PostContentBody({ post: {slug, content} }) {
         </ReactMarkdown>
       </div> */}
 
-      <div className='reactMarkdown'>        
+      <div className='reactMarkdown'>
+        <ReactMarkdown
+          className='linebreak'
+          components={{
+            a: ({ node, inline, children, href, ...props }) => (
+              <a href={href} {...props}>
+                {children}
+              </a>
+            ),
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+      </div>
+
+      {/* <div className='reactMarkdown'>        
         <ReactMarkdown
 
         >
           {content}
         </ReactMarkdown>
-      </div>
+      </div> */}
     </>
   );
 }

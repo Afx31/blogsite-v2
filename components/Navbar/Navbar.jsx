@@ -40,25 +40,21 @@ export default function Navbar(params) {
         </ul>
         <ul className='navbarList'>
           <li className='navbarItem'>
-            {/* <NextLink href={{ pathname: `/post/${props.civicLink}` }}> */}
             <NextLink href={{ pathname: `/post/civic/${params.civicLink}` }}>
               Civic
             </NextLink>
           </li>
           <li className='navbarItem'>
-            {/* <NextLink href={{ pathname: `/post/${props.wagoLink}` }}> */}
             <NextLink href={{ pathname: `/post/wago/${params.wagoLink}` }}>
               Wago
             </NextLink>
           </li>
           <li className='navbarItem'>
-            {/* <NextLink href={{ pathname: `/post/${props.frogoLink}` }}> */}
             <NextLink href={{ pathname: `/post/frogo/${params.frogoLink}` }}>
               Frogo
             </NextLink>
           </li>
           <li className='navbarItem'>
-            {/* <NextLink href={{ pathname: `/post/${props.ef9Link}` }}> */}
             <NextLink href={{ pathname: `/post/ef9/${params.ef9Link}` }}>
               EF9
             </NextLink>
