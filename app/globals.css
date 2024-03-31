@@ -2,6 +2,20 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
+.darkmode {
+  --background: #181A1B;
+  --heading-prim: #C9C3BC;
+  --heading-sec: #E8E6E3;
+  --text-primary: #A8A095;
+}
+
+.lightmode {
+  --background: #FFFF;
+  --heading-prim: #000;
+  --heading-sec: #000;
+  --text-primary: #000;
+}
+
 * {
   /* font-family: 'Roboto', sans-serif; */
   font-family: 'Oxygen', sans-serif;
@@ -31,34 +45,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.darkmode {
-  --background: #181A1B;
-  --heading-prim: #C9C3BC;
-  --heading-sec: #E8E6E3;
-  --text-primary: #A8A095;
-}
-
-.lightmode {
-  --background: #FFFF;
-  --heading-prim: #000;
-  --heading-sec: #000;
-  --text-primary: #000;
-}
-
-/* .App {
-  background-color: var(--background);
-  color: var(--text-primary);
-  --heading-primary: var(--heading-prim);
-  --heading-secondary: var(--heading-sec);
-  --background-secondary: #343A40;
-  --background-tertiary: #E2E2E2;
-  --text-secondary: #AAA;
-  --text-alert: #FF0000;
-  --text-white: #FFF;
-  --text-dulled: #6c757d;
-  --text-links-blue: #007bff;
-} */
 
 h1 {
   font-size: 40px;

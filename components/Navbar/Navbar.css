@@ -16,11 +16,16 @@
 }
 
 .navbarLogo {
+  background-color: var(--background-secondary);
   cursor: pointer;
   padding-top: 7px;
 }
+.navbarLogo svg {
+  background-color: var(--background-secondary);
+}
 
 .navbarList {
+  background-color: var(--background-secondary);
   margin: 0px;
   padding: 0.5rem 1rem;
 }
@@ -31,6 +36,7 @@
   display: inline-block;
 }
 .navbarItem a {
+  background-color: var(--background-secondary);
   cursor: pointer;
   color: #FFFFFF80;
   text-decoration: none !important;
@@ -45,6 +51,7 @@
 }
 
 .navbarItemThemebtn {
+  background-color: var(--background-secondary);
   list-style: none;
   text-decoration: none;
   display: inline-block;

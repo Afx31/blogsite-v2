@@ -10,5 +10,6 @@
 }
 
 .ftInnerContainer p {
-  margin: 0;
+  background-color: var(--background-secondary);
+  margin: 0;  
 }

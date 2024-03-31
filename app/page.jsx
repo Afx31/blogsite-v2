@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import './Home.css';
 import CardDisplay from '../components/CardDisplay/CardDisplay';
 

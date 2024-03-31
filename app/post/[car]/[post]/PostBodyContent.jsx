@@ -18,9 +18,10 @@ const YouTubeEmbed = ({ src }) => {
 
 export default function PostContentBody({ post: {frontmatter: {id, title, slug, date, description, thumbnail}, content} }) {
   // var newContent = content.replaceAll('  ', '  \n');    // Still no idea what this was for
-  // var slideIndex = 1;
+  var slideIndex = 1;
 
   // useEffect(() => {
+  //   console.log('test12233')
   //   if (id !== null) {
   //     carouselRender(slideIndex);
   //   }
@@ -30,7 +31,7 @@ export default function PostContentBody({ post: {frontmatter: {id, title, slug, 
   //   carouselRender(slideIndex = n)
   // }
 
-  // function carouselRender(n) {
+  // function carouselRender(n) {    
   //   var slides = document.querySelectorAll(`[src*='carouselimg']`);
   //   var dots = document.querySelectorAll(`[src*='carouseldot']`);
   
@@ -59,7 +60,7 @@ export default function PostContentBody({ post: {frontmatter: {id, title, slug, 
   //     dots[slideIndex-1].className += ' active';
   //   }
   // }
-
+  
   return (
     <>
       <h1>{title}</h1>

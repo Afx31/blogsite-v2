@@ -21,6 +21,7 @@
 }
 
 .cdContent {
+  background-color: transparent;
   position: absolute;
   color: #FFF;
   width: 90%;
@@ -29,20 +30,22 @@
   transform: translate(-50%, -50%);
 }
 .cdContent h1 {
+  background-color: transparent;
   color: #FFF;
 }
 .cdContent p {
+  background-color: transparent;
   font-size: 20px;
   margin: 0 0 16px;
 }
 
 .cdReadmoreBtn {
+  /* background-color: transparent; */
   font-size: 16px;
   padding: 12px 20px;
   color: #FFF;
   border: 2px solid #FFF;
   border-radius: 2px;
-  background-color: transparent;
   cursor: pointer;
 }
 .cdReadmoreBtn:hover {
