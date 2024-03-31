@@ -38,37 +38,34 @@ export default function Post({ params }) {
     }
   }
 
-  // const sortPostLinksByMonth = (car) => {
-  //   const postLinks = getAllPostFileLinks(car);
+  const sortPostLinksByMonth = (postLinks) => {
+    sortedPosts = postLinks.allFrontmatter.reduce((acc, post) => {
+      var strDateparts = post.date.split('/');
+      var strDateformattedDate = strDateparts[2] + '-' + strDateparts[1] + '-' + strDateparts[0];
 
-  //   sortedPosts = postLinks.reduce((acc, post) => {
-  //     var date = new Date(post.createdAt);
-  //     var year = date.getFullYear();
-  //     var month = date.getMonth() + 1; // Note: Month is 0-indexed, so we add 1 to get the actual month number
-  //     var key = `${year}-${month}`;
-  //     var group = acc.find((g) => g.key === key);
+      var date = new Date(strDateformattedDate);
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1; // Note: Month is 0-indexed, so we add 1 to get the actual month number
+      var key = `${year}-${month}`;
+      var group = acc.find((g) => g.key === key);
 
-  //     if (group)
-  //       group.posts.push(post);
-  //     else
-  //       acc.push({ key, posts: [post] });
+      if (group)
+        group.posts.push(post);
+      else
+        acc.push({ key, posts: [post] });
 
-  //     return acc;
-  //   }, [])
-  //     .map((g) => ({
-  //       month: g.key.split("-")[1],
-  //       year: g.key.split("-")[0],
-  //       monthYearString: `${getMonthText(g.key.split("-")[1])} ${g.key.split("-")[0]}`,
-  //       posts: g.posts
-  //     }));
-  // }  
-  // sortPostLinksByMonth(params.car);
-
-  // return (
-  //   <>
-  //     <PostContentBody post={getPostData(params.car, params.post)} />
-  //   </>
-  // );
+      return acc;
+    }, [])
+      .map((g) => ({
+        month: g.key.split("-")[1],
+        year: g.key.split("-")[0],
+        monthYearString: `${getMonthText(g.key.split("-")[1])} ${g.key.split("-")[0]}`,
+        posts: g.posts.reverse()
+      }));
+    sortedPosts.reverse();
+  }
+  
+  sortPostLinksByMonth(allCarPostLinks);
 
   return (
     <div className='pContainer'>
@@ -78,39 +75,20 @@ export default function Post({ params }) {
         <h5>RECENT POSTS</h5>
         <div className='threadPostLinks'>
           <ul className='groupedContent'>
-            {/* {sortedPosts.map((groupedPeriod) => (
+            {sortedPosts.map((groupedPeriod) => (
               <li className='groupedHeading' key={groupedPeriod.monthYearString}>
                 <h4>{groupedPeriod.monthYearString}</h4>
                 <ul className='monthlyPostList'>
                   {groupedPeriod.posts.map((post) => (
                     <li key={post.id}>
-                      <NextLink key={post.id} href={{ pathname: `/post/${post.id}` }}>
-                        <a
-                          className={`$'postLinks' ${router.asPath === `/post/${post.id}` ? `${postLinksActive}` : ''} `}
-                        >
-                          {post.title}
-                        </a>
-                      </NextLink>
-                  </li>
-                  ))}
-                </ul>
-              </li>
-            ))} */}
-            {/* {sortedPosts.map((groupedPeriod) => (
-              <li className='groupedHeading' key={groupedPeriod.monthYearString}>
-                <h4>{groupedPeriod.monthYearString}</h4>
-                <ul className='monthlyPostList'> */}
-                  {allCarPostLinks.allFrontmatter.map((post) => (
-                    <li key={post.fileName}>
-                      <NextLink className='postLinks' href={{ pathname: `/post/${params.car}/${post.fileName}` }}>
-                        {/* className={`$'postLinks' ${router.asPath === `/post/${post.id}` ? `${postLinksActive}` : ''} `} */}
+                      <NextLink className='postLinks' href={{ pathname: `/post/${params.car}/${post.id}` }}>
                         {post.title}
                       </NextLink>
                     </li>
                   ))}
-                {/* </ul>
+                </ul>
               </li>
-            ))} */}
+            ))}
           </ul>
         </div>
       </div>
@@ -142,7 +120,7 @@ export async function generateStaticParams() {
 
     const carPosts = posts.map((post) => ({
       car: car,
-      post: post
+      post: post.replace(/\.md$/, '')
     }));
 
     allPosts.push(...carPosts);

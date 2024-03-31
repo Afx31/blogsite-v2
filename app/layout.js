@@ -4,11 +4,13 @@ import Footer from '../components/Footer/Footer';
 
 // import { Inter } from '/next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
+
+// Just gonna update the below to latest each time, for now...
 const navLinks = {
-  civic: 'civic-3',
-  wago: 'wago-3',
+  civic: 'civic-1',
+  wago: 'wago-1',
   frogo: 'frogo-1',
-  ef9: 'ef9-3'
+  ef9: 'ef9-1'
 }
 
 export const metadata = {

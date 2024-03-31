@@ -1,5 +1,5 @@
 ---
-fileName: wago-3.md
+id: wago-3
 title: Rusty roof.. What have I bought
 slug: rusty-roof-what-have-i-bought
 date: 22/02/2018

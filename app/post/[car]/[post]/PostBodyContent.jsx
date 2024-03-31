@@ -16,7 +16,7 @@ const YouTubeEmbed = ({ src }) => {
   );
 }
 
-export default function PostContentBody({ post: {frontmatter: {title, slug, date, description, thumbnail}, content} }) {
+export default function PostContentBody({ post: {frontmatter: {id, title, slug, date, description, thumbnail}, content} }) {
   // var newContent = content.replaceAll('  ', '  \n');    // Still no idea what this was for
   // var slideIndex = 1;
 
@@ -79,12 +79,7 @@ export default function PostContentBody({ post: {frontmatter: {title, slug, date
                   {children}
                 </a>
               );
-            },
-            // a: ({ node, inline, children, href, ...props }) => (
-            //   <a href={href} {...props}>
-            //     {children}
-            //   </a>
-            // ),
+            }
           }}
         >
           {content}

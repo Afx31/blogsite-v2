@@ -1,5 +1,5 @@
 ---
-fileName: frogo-1.md
+id: frogo-1
 title: Frogo Intro
 slug: frogo-intro
 date: 

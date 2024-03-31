@@ -1,5 +1,5 @@
 ---
-fileName: wago-2.md
+id: wago-2
 title: Interior clean + rust situation
 slug: interior-clean-rust-situation
 date: 18/02/2018

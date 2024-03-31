@@ -6,7 +6,6 @@
   grid-template-columns: 1fr 3fr;
   margin: 0px 500px;
   /* max-width: 930px; */
-  border: .5px solid yellow;
 }
 .pContainer h1 {
   text-transform: capitalize;
@@ -25,7 +24,6 @@
 
 /* LEFT PANE */
 .pLeftPane {
-  border: .5px solid green
 }
 .pLeftPaneMobile {
   display: none;
@@ -78,7 +76,6 @@
 .pRightPane {
   /* min-width: 900px; */
   /* max-width: 930px; */
-  border: .5px solid red;
 }
 
 

@@ -22,7 +22,7 @@
 
 .cdContent {
   position: absolute;
-  color: var(--text-white);
+  color: #FFF;
   width: 90%;
   top: 50%;
   left: 50%;
@@ -39,16 +39,16 @@
 .cdReadmoreBtn {
   font-size: 16px;
   padding: 12px 20px;
-  color: var(--text-white);
-  border: 2px solid var(--text-white);
+  color: #FFF;
+  border: 2px solid #FFF;
   border-radius: 2px;
   background-color: transparent;
   cursor: pointer;
 }
 .cdReadmoreBtn:hover {
   color: #000;
-  background-color: var(--text-white);
-  border: 2px solid var(--text-white);
+  background-color: #FFF;
+  border: 2px solid #FFF;
   transition: 0.3s ease-in-out;
 }
 

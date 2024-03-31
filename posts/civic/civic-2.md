@@ -1,5 +1,5 @@
 ---
-fileName: civic-2.md
+id: civic-2
 title: First week of ownership 'mods'
 slug: first-week-of-ownership-mods
 date: 28/10/2014

@@ -1,5 +1,5 @@
 ---
-fileName: civic-1.md
+id: civic-1
 title: The Civic Intro
 slug: the-civic-intro
 date: 14/10/2014

@@ -1,5 +1,5 @@
 ---
-fileName: wago-1.md
+id: wago-1
 title: The RT4WD Wagon!
 slug: the-rtward-wagon!
 date: 13/02/2018

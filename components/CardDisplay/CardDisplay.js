@@ -10,13 +10,13 @@ export default function CardDisplay({ post: { car, id, title, description, thumb
       <div className='cdContent'>
         <h1>{title}</h1>
         <p>{description}</p>
-        {/* <button
-          className='cdDeadmoreBtn'
-          onClick={() => Router.push({ pathname: `/post/${car}/${id}` })}
-        >
-          READ MORE
-        </button> */}
-        <NextLink href={`/post/${car}/${id}`}>Button</NextLink>
+        <NextLink href={{ pathname: `/post/${car}/${id}` }}>
+          <button
+            className='cdReadmoreBtn'
+          >
+            READ MORE
+          </button>          
+        </NextLink>
       </div>
     </div>
   );
