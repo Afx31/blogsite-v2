@@ -1,14 +1,11 @@
 ---
-title: 
-slug: 
-date: 
-description: 
-thumbnail: 
+fileName: civic-2.md
+title: First week of ownership 'mods'
+slug: first-week-of-ownership-mods
+date: 28/10/2014
+description: Interior swap + muffler delete week 1/2 of ownership
+thumbnail: https://live.staticflickr.com/4540/37590418275_0a7bdabcc1_b.jpg
 ---
-
-# First week of ownership 'mods'
-## Interior swap + muffler delete week 1/2 of ownership
-28/10/2014
 
 Within the first week of owning her, I've bought a whole grey/black interior from someone who was parting out an entire B18C7 ED after it had a recent accident. My interior is the factory blue which was very clean, no scratches, tears or marks anywhere, but I simply didn't like it. The grey/black was always the ideal coloured interior to get.
 

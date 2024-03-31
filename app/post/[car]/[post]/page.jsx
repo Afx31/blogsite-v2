@@ -2,15 +2,12 @@ import './Post.css';
 import React from 'react';
 import NextLink from 'next/link';
 import PostContentBody from './PostBodyContent';
-import { getPostData, getPostsFiles } from '../../../../lib/util';
+import { getAllPostFileLinks, getAllPostFrontmatter, getPostData, getPostDataIncludingYAML } from '../../../../lib/util';
 
 export default function Post({ params }) {
   var sortedPosts;
-  const postLinks = getPostsFiles(params.car);
-
-  postLinks.map((post) => {
-    console.log('TEST:: ', post)
-  })
+  // const postLinks = getAllPostFileLinks(params.car);
+  const allCarPostLinks = getAllPostFrontmatter(params.car);
 
   const getMonthText = (month) => {
     switch(month) {
@@ -42,7 +39,7 @@ export default function Post({ params }) {
   }
 
   // const sortPostLinksByMonth = (car) => {
-  //   const postLinks = getPostsFiles(car);
+  //   const postLinks = getAllPostFileLinks(car);
 
   //   sortedPosts = postLinks.reduce((acc, post) => {
   //     var date = new Date(post.createdAt);
@@ -75,7 +72,7 @@ export default function Post({ params }) {
 
   return (
     <div className='pContainer'>
-      <div className='pPaneLeft'>
+      <div className='pLeftPane'>
         <h1>{params.car.toUpperCase()}</h1>
         <hr className='dropdownDivider'/>
         <h5>RECENT POSTS</h5>
@@ -103,13 +100,13 @@ export default function Post({ params }) {
               <li className='groupedHeading' key={groupedPeriod.monthYearString}>
                 <h4>{groupedPeriod.monthYearString}</h4>
                 <ul className='monthlyPostList'> */}
-                  {postLinks.map((post) => (
-                    <li key={post}>
-                      <NextLink className='postLinks' href={{ pathname: `/post/${params.car}/${post}` }}>
+                  {allCarPostLinks.allFrontmatter.map((post) => (
+                    <li key={post.fileName}>
+                      <NextLink className='postLinks' href={{ pathname: `/post/${params.car}/${post.fileName}` }}>
                         {/* className={`$'postLinks' ${router.asPath === `/post/${post.id}` ? `${postLinksActive}` : ''} `} */}
-                        {post}
+                        {post.title}
                       </NextLink>
-                  </li>
+                    </li>
                   ))}
                 {/* </ul>
               </li>
@@ -117,7 +114,7 @@ export default function Post({ params }) {
           </ul>
         </div>
       </div>
-      {/* <div className='pPaneLeftMobile'>
+      {/* <div className='pLeftPaneMobile'>
         <h1>{props.post.car}</h1>
         <hr className='dropdownDivider'/>
         <h5>RECENT POSTS</h5>
@@ -129,9 +126,8 @@ export default function Post({ params }) {
           </select>
         </div>
       </div> */}
-      <div className='pPaneRight'>
-        {/* <PostContentBody post={props.post} /> */}
-        <PostContentBody post={getPostData(params.car, params.post)} />
+      <div className='pRightPane'>
+        <PostContentBody post={getPostDataIncludingYAML(params.car, params.post)} />
       </div>
     </div>
   );
@@ -142,7 +138,7 @@ export async function generateStaticParams() {
   const allPosts = [];
 
   for (var car of cars) {
-    const posts = getPostsFiles(car);
+    const posts = getAllPostFileLinks(car);
 
     const carPosts = posts.map((post) => ({
       car: car,

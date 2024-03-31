@@ -1,13 +1,11 @@
 ---
+fileName: civic-1.md
 title: The Civic Intro
 slug: the-civic-intro
 date: 14/10/2014
 description: 
 thumbnail: https://live.staticflickr.com/4337/36385314124_656c824873_b.jpg
 ---
-
-# The Civic Intro
-14/10/2014
 
 Howdy! I'm Will from Australia, owner of a 1989 Honda Civic ED6. I purchased the car on the evening of 13th October 2014 as a daily but to also get me into some track activities. I had view the car the weekend before with my two mates whom are mechanics to check over the vehicle, she was a beauty!
 

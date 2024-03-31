@@ -1,5 +1,11 @@
-# Interior clean + rust situation
-18/02/2018
+---
+fileName: wago-2.md
+title: Interior clean + rust situation
+slug: interior-clean-rust-situation
+date: 18/02/2018
+description: 
+thumbnail: https://live.staticflickr.com/4724/39529620494_3390a4d0e4_b.jpg
+---
 
 Alrighty so last weekend I got around to just cleaning everything out, gassed the entire car with bug spray as there was spidery cunts (juicebox reference) left right and center! Cleaned out the boot too and vacuumed all the dog hairs out. Also removed front seats as under them contained more spidery cunts too..
 

@@ -1,5 +1,11 @@
-# Rusty roof.. What have I bought
-22/02/2018
+---
+fileName: wago-3.md
+title: Rusty roof.. What have I bought
+slug: rusty-roof-what-have-i-bought
+date: 22/02/2018
+description: The rust begins..
+thumbnail: https://live.staticflickr.com/4667/40405217022_741646bd0e_b.jpg
+---
 
 Sooooo... I felt like removing the plastic seat trim pieces on the side of the roof to see what lies below, and boy did I find some rust.. In the first photo below you'll see where I marked boxes with a permo, inside those sections is where rust is. The one on the left I then provided a photo of before I poked around and then after with a torch shinning through from inside. This weekend I plan to drop the sunroof assembly and cut out all the rust, and weld in my sheet metal to sort that section. Not worried about looks as it'll be covered, just as long as the rust is gone and it's sealed!
 

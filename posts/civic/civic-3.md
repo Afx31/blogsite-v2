@@ -1,5 +1,11 @@
-# The first actual mods
-15/11/2014
+---
+fileName: civic-3.md
+title: The first actual mods
+slug: the-first-actual-mods
+date: 15/11/2014
+description: 
+thumbnail: https://live.staticflickr.com/4529/38477183161_b50dd91ed9_b.jpg
+---
 
 About 1 month later I went ahead with purchasing some suspension mods, some of which were new to me. This purchase consisted of GAB SS coilovers, Skunk2 front & rear camber arms and a red Civic rear garnish piece.
 

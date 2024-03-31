@@ -1,5 +1,11 @@
-# The RT4WD Wagon!
-13/02/2018
+---
+fileName: wago-1.md
+title: The RT4WD Wagon!
+slug: the-rtward-wagon!
+date: 13/02/2018
+description: 
+thumbnail: https://live.staticflickr.com/4654/40240471031_20ae76315c_b.jpg
+---
 
 Howdy! So I've been in the old school Honda game for over 3yrs now with my track/street built hatch (https://honda-tech.com/forums/honda-...chbox-3251019/) and I've now picked up a new project, a RT4WD Wagon! 
 
