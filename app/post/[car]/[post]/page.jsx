@@ -2,12 +2,11 @@ import './Post.css';
 import React from 'react';
 import NextLink from 'next/link';
 import PostContentBody from './PostBodyContent';
-import { getAllPostFileLinks, getAllPostFrontmatter, getPostData, getPostDataIncludingYAML } from '../../../../lib/util';
+import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../../lib/util';
 
-export default function Post({ params }) {
+export default async function Post({ params }) {
   var sortedPosts;
-  // const postLinks = getAllPostFileLinks(params.car);
-  const allCarPostLinks = getAllPostFrontmatter(params.car);
+  const allCarPostLinks = await getCarsPostLinks(params.car);
 
   const getMonthText = (month) => {
     switch(month) {
@@ -38,8 +37,8 @@ export default function Post({ params }) {
     }
   }
 
-  const sortPostLinksByMonth = (postLinks) => {
-    sortedPosts = postLinks.allFrontmatter.reduce((acc, post) => {
+  const sortPostLinksByMonth = (post) => {
+    sortedPosts = post.reduce((acc, post) => {
       var strDateparts = post.date.split('/');
       var strDateformattedDate = strDateparts[2] + '-' + strDateparts[1] + '-' + strDateparts[0];
 
@@ -64,7 +63,7 @@ export default function Post({ params }) {
       }));
     sortedPosts.reverse();
   }
-  
+
   sortPostLinksByMonth(allCarPostLinks);
 
   return (
@@ -105,7 +104,7 @@ export default function Post({ params }) {
         </div>
       </div> */}
       <div className='pRightPane'>
-        <PostContentBody post={getPostDataIncludingYAML(params.car, params.post)} />
+        <PostContentBody post={getPostData(params.car, params.post)} />
       </div>
     </div>
   );
@@ -115,15 +114,18 @@ export async function generateStaticParams() {
   const cars = ['civic', 'wago', 'frogo', 'ef9'];
   const allPosts = [];
 
-  for (var car of cars) {
-    const posts = getAllPostFileLinks(car);
-
-    const carPosts = posts.map((post) => ({
-      car: car,
-      post: post.replace(/\.md$/, '')
-    }));
-
-    allPosts.push(...carPosts);
+  for (const car of cars) {
+    try {
+        const fileNames = await getAllPostFileLinks(car);
+        const carPosts = fileNames.map(post => ({
+          car: car,
+          post: post.replace(/\.md$/, '')
+        }))
+        
+        allPosts.push(...carPosts);
+    } catch (error) {
+        console.error('Error fetching file names for car:', car, 'Error:', error);
+    }
   }
 
   return allPosts;

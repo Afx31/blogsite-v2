@@ -16,9 +16,11 @@ const YouTubeEmbed = ({ src }) => {
   );
 }
 
-export default function PostContentBody({ post: {frontmatter: {id, title, slug, date, description, thumbnail}, content} }) {
+export default async function PostContentBody({ post }) {
   // var newContent = content.replaceAll('  ', '  \n');    // Still no idea what this was for
-  var slideIndex = 1;
+  // var slideIndex = 1;
+  post = await post;
+  const { frontmatter, content } = post;
 
   // useEffect(() => {
   //   console.log('test12233')
@@ -63,9 +65,9 @@ export default function PostContentBody({ post: {frontmatter: {id, title, slug, 
   
   return (
     <>
-      <h1>{title}</h1>
+      <h1>{frontmatter.title}</h1>
       <p className='postDate'>
-        Posted on {date}
+        Posted on {frontmatter.date}
       </p>
       <div className='reactMarkdown'>
         <ReactMarkdown
