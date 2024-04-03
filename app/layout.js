@@ -18,14 +18,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className='darkmode'>
-      <Navbar
-        civicLink={navLinks.civic}
-        wagoLink={navLinks.wago}
-        frogoLink={navLinks.frogo}
-        ef9Link={navLinks.ef9}
-      />
-      {children}
-      <Footer />
+      <body>
+        <Navbar
+          civicLink={navLinks.civic}
+          wagoLink={navLinks.wago}
+          frogoLink={navLinks.frogo}
+          ef9Link={navLinks.ef9}
+        />
+          {children}
+        <Footer />
+      </body>
     </html>
   );
 }
