@@ -1,9 +1,7 @@
 .postDate {
-  margin: 0 0 2.5rem 0;
-  font-size: 13px;
   color: var(--text-secondary);
-}
-.postDateFormat {
+  margin: 0.5rem 0 2.5rem 0;
+  font-size: 13px;
   font-weight: bold;
 }
 

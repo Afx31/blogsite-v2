@@ -3,7 +3,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import PostContentBody from './PostBodyContent';
 import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../../lib/util';
-import postsLinkList from './postsLinkList.json';
+import postsLinkList from '../../../../lib/postsLinkList.json';
 
 export default async function Post({ params }) {
   var sortedPosts;
@@ -69,7 +69,23 @@ export default async function Post({ params }) {
 
   return (
     <div className='pContainer'>
+      <div className='pRightPaneMobile'>
+        <h1>{params.car}</h1>
+        <hr className='dropdownDivider'/>
+        <h5>RECENT POSTS</h5>
+        <div className='threadPostLinks'>
+        {/* onChange={(e) => Router.push(`/post/${params.car}/[id]`, `/post/${e.target.value}`)} */}
+          <select className='pSelect' defaultValue={params.post} > 
+            {postsLinkList[params.car].map((post) => {
+              return <option key={post.id} value={post.id}>{post.title}</option>
+            })}
+          </select>
+        </div>
+      </div>
       <div className='pLeftPane'>
+        <PostContentBody post={getPostData(params.car, params.post)} />
+      </div>
+      <div className='pRightPane'>
         <h1>{params.car.toUpperCase()}</h1>
         <hr className='dropdownDivider'/>
         <h5>RECENT POSTS</h5>
@@ -81,8 +97,9 @@ export default async function Post({ params }) {
                 <ul className='monthlyPostList'>
                   {groupedPeriod.posts.map((post) => (
                     <li key={post.id}>
-                      <NextLink className='postLinks' href={{ pathname: `/post/${params.car}/${post.id}` }}>
-                        {post.title}
+                      {/* <NextLink className={`postLinks ${router.asPath === `/post/${params.car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/post/${params.car}/${post.id}` }}> */}
+                      <NextLink className={'postLinks'} href={{ pathname: `/post/${params.car}/${post.id}` }}>
+                        {post.title.replace(/'/g, '')}
                       </NextLink>
                     </li>
                   ))}
@@ -91,21 +108,6 @@ export default async function Post({ params }) {
             ))}
           </ul>
         </div>
-      </div>
-      {/* <div className='pLeftPaneMobile'>
-        <h1>{props.post.car}</h1>
-        <hr className='dropdownDivider'/>
-        <h5>RECENT POSTS</h5>
-        <div className='threadPostLinks'>
-          <select className='pSelect' defaultValue={props.post.id} onChange={(e) => Router.push('/post/[id]', `/post/${e.target.value}`)}>
-            {props.postLinks.map((post) => {
-              return <option key={post.id} value={post.id}>{post.title}</option>
-            })}
-          </select>
-        </div>
-      </div> */}
-      <div className='pRightPane'>
-        <PostContentBody post={getPostData(params.car, params.post)} />
       </div>
     </div>
   );

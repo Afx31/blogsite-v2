@@ -2,15 +2,12 @@ import './globals.css';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 
-// import { Inter } from '/next/font/google';
-// const inter = Inter({ subsets: ['latin'] });
-
 // Just gonna update the below to latest each time, for now...
 const navLinks = {
-  civic: 'civic-1',
-  wago: 'wago-1',
+  civic: 'civic-110',
+  wago: 'wago-35',
   frogo: 'frogo-1',
-  ef9: 'ef9-1'
+  ef9: 'ef9-11'
 }
 
 export const metadata = {
@@ -27,7 +24,6 @@ export default function RootLayout({ children }) {
         frogoLink={navLinks.frogo}
         ef9Link={navLinks.ef9}
       />
-      {/* <body className={inter.className}>{children}</body> */}
       {children}
       <Footer />
     </html>
