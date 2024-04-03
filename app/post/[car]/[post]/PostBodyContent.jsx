@@ -23,7 +23,6 @@ export default async function PostContentBody({ post }) {
   const { frontmatter, content } = post;
 
   // useEffect(() => {
-  //   console.log('test12233')
   //   if (id !== null) {
   //     carouselRender(slideIndex);
   //   }
@@ -65,7 +64,7 @@ export default async function PostContentBody({ post }) {
   
   return (
     <>
-      <h1>{frontmatter.title}</h1>
+      <h1>{frontmatter.title.replace(/'/g, '')}</h1>
       <p className='postDate'>
         Posted on {frontmatter.date}
       </p>

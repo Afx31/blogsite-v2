@@ -76,6 +76,8 @@
 .pRightPane {
   /* min-width: 900px; */
   /* max-width: 930px; */
+  border: .5px solid red;
+  /* margin-left: 10px; */
 }
 
 

@@ -3,11 +3,11 @@ import React from 'react';
 import NextLink from 'next/link';
 import PostContentBody from './PostBodyContent';
 import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../../lib/util';
+import postsLinkList from './postsLinkList.json';
 
 export default async function Post({ params }) {
   var sortedPosts;
-  const allCarPostLinks = await getCarsPostLinks(params.car);
-
+  
   const getMonthText = (month) => {
     switch(month) {
       case '1':
@@ -37,8 +37,8 @@ export default async function Post({ params }) {
     }
   }
 
-  const sortPostLinksByMonth = (post) => {
-    sortedPosts = post.reduce((acc, post) => {
+  const sortPostLinksByMonth = (postLinkList) => {
+    sortedPosts = postLinkList[params.car].reduce((acc, post) => {
       var strDateparts = post.date.split('/');
       var strDateformattedDate = strDateparts[2] + '-' + strDateparts[1] + '-' + strDateparts[0];
 
@@ -64,7 +64,8 @@ export default async function Post({ params }) {
     sortedPosts.reverse();
   }
 
-  sortPostLinksByMonth(allCarPostLinks);
+  //sortPostLinksByMonth(await getCarsPostLinks(params.car));
+  sortPostLinksByMonth(postsLinkList);
 
   return (
     <div className='pContainer'>
