@@ -1,16 +1,16 @@
-.container {
+.cdContainer {
   margin: 1rem;
   position: relative;
   max-width: 30%;
 }
 
-.img {
+.cdImg {
   display: block;
   width: 100%;
   border-radius: 0.2rem;
 }
 
-.layer {
+.cdLayer {
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
@@ -20,40 +20,43 @@
   border-radius: 0.2rem;
 }
 
-.content {
+.cdContent {
+  background-color: transparent;
   position: absolute;
-  color: var(--text-white);
+  color: #FFF;
   width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.content h1 {
+.cdContent h1 {
+  background-color: transparent;
   color: #FFF;
 }
-.content p {
+.cdContent p {
+  background-color: transparent;
   font-size: 20px;
   margin: 0 0 16px;
 }
 
-.readmoreBtn {
+.cdReadmoreBtn {
+  /* background-color: transparent; */
   font-size: 16px;
   padding: 12px 20px;
-  color: var(--text-white);
-  border: 2px solid var(--text-white);
+  color: #FFF;
+  border: 2px solid #FFF;
   border-radius: 2px;
-  background-color: transparent;
   cursor: pointer;
 }
-.readmoreBtn:hover {
+.cdReadmoreBtn:hover {
   color: #000;
-  background-color: var(--text-white);
-  border: 2px solid var(--text-white);
+  background-color: #FFF;
+  border: 2px solid #FFF;
   transition: 0.3s ease-in-out;
 }
 
 @media (max-width: 1100px) {
-  .content h1 {
+  .cdContent h1 {
     font-size: 30px;
   }
 }

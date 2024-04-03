@@ -1,14 +1,15 @@
-.container {
+.ftContainer {
   background-color: var(--background-secondary);
   width: 100%;
   padding: 1rem 0;
 }
 
-.innerContainer {
+.ftInnerContainer {
   text-align: center;
   color: var(--text-dulled);
 }
 
-.innerContainer p {
-  margin: 0;
+.ftInnerContainer p {
+  background-color: var(--background-secondary);
+  margin: 0;  
 }

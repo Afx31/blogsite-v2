@@ -1,15 +1,14 @@
-.vppContainer {
+.pContainer {
   padding-top: 5rem;
   padding-bottom: 2rem;
   display: inline-grid;
-  /* grid-template-columns: 1fr 2fr 1fr; */
-  grid-template-columns: 1fr 3fr;
-  margin: 0px 180px; /* Width controller */
+  grid-template-columns: 2fr 1fr;
+  margin: 0px 500px;
 }
-.vppContainer h1 {
+.pContainer h1 {
   text-transform: capitalize;
 }
-.vppContainer h5 {
+.pContainer h5 {
   font-size: 1.25rem;
   margin: 0;
   margin-bottom: 0.5rem;
@@ -22,9 +21,16 @@
 }
 
 /* LEFT PANE */
-.vppPaneLeft {
+.pLeftPane {
+  /* min-width: 900px; */
+  /* max-width: 930px; */
 }
-.vppPaneLeftMobile {
+
+/* RIGHT PANE */
+.pRightPane {
+  margin-left: 100px;
+}
+.pRightPaneMobile {
   display: none;
 }
 
@@ -64,80 +70,71 @@
   font-weight: bold;
 }
 
-.vppSelect {
+.pSelect {
   width: 100%;
   height: 3rem;
   font-size: 18px;
 }
 
-
-/* RIGHT PANE */
-.vppPaneRight {
-  /* min-width: 900px; */
-  max-width: 930px;
-}
-
-
 @media (max-width: 1600px) {
-  .vppContainer {
+  .pContainer {
     margin: 0 120px;
   }
 }
 
 @media (max-width: 1500px) {
-  .vppContainer {
+  .pContainer {
     margin: 0px 100px;
   }
   
-  .vppPaneRight {
+  .pLeftPane {
     min-width: 700px;
   }
 }
 
 @media (max-width: 1300px) {
-  .vppContainer {
+  .pContainer {
     margin: 0px 90px;
   }
 
-  .vppPaneRight {
+  .pLeftPane {
     min-width: 600px;
   }
 }
 
 @media (max-width: 1200px) {
-  .vppContainer {
+  .pContainer {
     grid-template-columns: 1fr 1fr;
   }
 
-  .vppPaneRight {
+  .pLeftPane {
     min-width: 700px;
   }
 }
 
 @media (max-width: 1200px) {
-  .vppPaneRight {
+  .pLeftPane {
     min-width: 600px;
   }
 }
 
 @media (max-width: 960px) {
-  .vppContainer {
+  .pContainer {
     grid-template-columns: 1fr;
     margin: 0px 20px;
   }
   
-  .vppPaneLeft {
+  .pLeftPane {
+    min-width: 100%;
+    padding: 0;
+  }
+  .pRightPane {
     display: none;
   }
 
-  .vppPaneLeftMobile {
+  .pRightPaneMobile {
     display: inline-block;
     margin-bottom: 2rem;
     min-width: 100%;
-  }
-
-  .vppPaneRight {
-    min-width: 100%;
-    padding: 0;
   }
 }
