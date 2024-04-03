@@ -99,7 +99,7 @@ export default async function Post({ params }) {
                     <li key={post.id}>
                       {/* <NextLink className={`postLinks ${router.asPath === `/post/${params.car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/post/${params.car}/${post.id}` }}> */}
                       <NextLink className={'postLinks'} href={{ pathname: `/post/${params.car}/${post.id}` }}>
-                        {post.title.replace(/'/g, '')}
+                        {post.title !== undefined && post.title !== null ? post.title.replace(/'/g, '') : ''}
                       </NextLink>
                     </li>
                   ))}

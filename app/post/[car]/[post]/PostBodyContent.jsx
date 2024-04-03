@@ -64,7 +64,7 @@ export default async function PostContentBody({ post }) {
   
   return (
     <>
-      <h1>{frontmatter.title.replace(/'/g, '')}</h1>
+      <h1>{frontmatter.title !== undefined && frontmatter.title !== null ? frontmatter.title.replace(/'/g, '') : ''}</h1>
       <p className='postDate'>
         Posted on {frontmatter.date}
       </p>
