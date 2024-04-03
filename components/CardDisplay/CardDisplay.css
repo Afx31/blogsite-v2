@@ -62,7 +62,7 @@
 }
 
 @media (max-width: 960px) {
-  .container {
-    min-width: 100%;    
+  .cdContainer {
+    min-width: 100%;
   }
 }
