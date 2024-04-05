@@ -76,8 +76,8 @@ export default async function Post({ params }) {
         <div className='threadPostLinks'>
         {/* onChange={(e) => Router.push(`/post/${params.car}/[id]`, `/post/${e.target.value}`)} */}
           <select className='pSelect' defaultValue={params.post} > 
-            {postsLinkList[params.car].map((post) => {
-              return <option key={post.id} value={post.id}>{post.title}</option>
+            {postsLinkList[params.car].map((post, index) => {
+              return <option key={`${post.id}-${index}`} value={post.id}>{post.title.replace(/'/g, '')}</option>
             })}
           </select>
         </div>
@@ -95,8 +95,8 @@ export default async function Post({ params }) {
               <li className='groupedHeading' key={groupedPeriod.monthYearString}>
                 <h4>{groupedPeriod.monthYearString}</h4>
                 <ul className='monthlyPostList'>
-                  {groupedPeriod.posts.map((post) => (
-                    <li key={post.id}>
+                  {groupedPeriod.posts.map((post, index) => (
+                    <li key={`${post.id}-${index}`}>
                       {/* <NextLink className={`postLinks ${router.asPath === `/post/${params.car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/post/${params.car}/${post.id}` }}> */}
                       <NextLink className={'postLinks'} href={{ pathname: `/post/${params.car}/${post.id}` }}>
                         {post.title !== undefined && post.title !== null ? post.title.replace(/'/g, '') : ''}
