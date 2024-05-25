@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer';
 
 // Just gonna update the below to latest each time, for now...
 const navLinks = {
-  civic: 'civic-110',
+  civic: 'civic-112',
   wago: 'wago-35',
   frogo: 'frogo-1',
   ef9: 'ef9-11'
@@ -31,5 +31,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-// testing vercel build 1
