@@ -4,6 +4,20 @@ import CardDisplay from '../components/CardDisplay/CardDisplay';
 const latestPostsArray = [
   {
     car: 'civic',
+    id: 'civic-112',
+    title: 'Gearbox inspection',
+    description: '',
+    thumbnail: 'https://live.staticflickr.com/65535/53426176609_4a9036e3a9_b.jpg'
+  },
+  {
+    car: 'civic',
+    id: 'civic-111',
+    title: 'Fixing many things',
+    description: '',
+    thumbnail: 'https://live.staticflickr.com/65535/53402995021_1a867697ab_b.jpg'
+  },
+  {
+    car: 'civic',
     id: 'civic-110',
     title: 'Honda Nationals 2023',
     description: '',
@@ -22,20 +36,6 @@ const latestPostsArray = [
     title: 'MWSCC - Morgan Park 2023',
     description: '',
     thumbnail: 'https://live.staticflickr.com/65535/53174948719_75ededca6f_b.jpg'
-  },
-  {
-    car: 'civic',
-    id: 'civic-107',
-    title: 'Finalising the Civic + Morgan Park prep',
-    description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/53175239183_3ae2d5b7a7_b.jpg'
-  },
-  {
-    car: 'civic',
-    id: 'civic-106',
-    title: 'Setting up coilovers correctly',
-    description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/53174151637_6898d60b40_b.jpg'
   },
   {
     car: 'wago',
