@@ -2,7 +2,7 @@ import './globals.css';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 
-// Just gonna update the below to latest each time, for now...
+// Just gonna update the below to latest each time, for now..
 const navLinks = {
   civic: 'civic-118',
   wago: 'wago-35',
