@@ -44,7 +44,7 @@
 
 .reactMarkdown h3 {
   font-size: 18px;
-  margin: 0px 0px -14px 0px;
+  margin: 10px 0px -10px 0px;
 }
 
 /* Image bio text = h6 */
@@ -53,12 +53,17 @@
   padding-bottom: 20px;
 }
 
+.reactMarkdown ol {
+  margin-top: -30px;
+  margin-bottom: -20px;
+}
+
 .reactMarkdown ul {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  margin-top: -10px;
-  margin-bottom: 0px;
+  /* margin-top: -10px; */
+  margin-bottom: -38px;
 }
 
 .reactMarkdown li {
