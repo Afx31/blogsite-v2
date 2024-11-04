@@ -4,38 +4,38 @@ import CardDisplay from '../components/CardDisplay/CardDisplay';
 const latestPostsArray = [
   {
     car: 'civic',
-    id: 'civic-118',
-    title: 'SMSP GP: Benchmark - 1.49.37 (PB)',
+    id: 'civic-124',
+    title: 'MWSCC - Morgan Park 2024',
     description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/53873487470_3286c4ec61_b.jpg'
+    thumbnail: 'https://live.staticflickr.com/65535/54104608828_61bba97e7f_b.jpg'
   },
   {
     car: 'civic',
-    id: 'civic-117',
-    title: 'SMSP GP: First proper outing - 1.51.53 (PB)',
+    id: 'civic-123',
+    title: 'Fixing the coilover setup',
     description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/53872169172_3905e553d1_b.jpg'
+    thumbnail: 'https://live.staticflickr.com/65535/54104609553_9238a5ffe0_b.jpg'
   },
   {
     car: 'civic',
-    id: 'civic-116',
-    title: 'Marulan Raceway + New parts',
+    id: 'civic-122',
+    title: 'Trying to fit the 9 inch 6ULs',
     description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/53760885899_e0a641c918_b.jpg'
+    thumbnail: 'https://live.staticflickr.com/65535/54103489807_77e292a195_b.jpg'
   },
   {
     car: 'civic',
-    id: 'civic-115',
-    title: 'Send It Sydney - SMSP GP + broken driveshaft',
+    id: 'civic-121',
+    title: '10-years-with-the-civic',
     description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/53738650046_3aaa8c7838_b.jpg'
+    thumbnail: 'https://live.staticflickr.com/65535/54104806640_0187a6cb6e_b.jpg'
   },
   {
     car: 'civic',
-    id: 'civic-114',
-    title: 'SMSP GP Prep',
+    id: 'civic-120',
+    title: 'Winton RPM culprit | BYP Racing retune! | MP prep',
     description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/53738844528_3a7e370e03_b.jpg'
+    thumbnail: 'https://live.staticflickr.com/65535/54104808020_d30fdf06ed_b.jpg'
   },
   {
     car: 'wago',
