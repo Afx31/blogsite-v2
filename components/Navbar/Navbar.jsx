@@ -50,10 +50,7 @@ export default function Navbar(params) {
             </NextLink>
           </li>
           <li className='navbarItem'>
-            <NextLink
-              href={{ pathname: `/post/frogo/${params.frogoLink}` }}
-              
-            >
+            <NextLink href={{ pathname: `/post/frogo/${params.frogoLink}` }}>
               Frogo
             </NextLink>
           </li>

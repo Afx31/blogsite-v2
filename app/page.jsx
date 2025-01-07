@@ -4,6 +4,13 @@ import CardDisplay from '../components/CardDisplay/CardDisplay';
 const latestPostsArray = [
   {
     car: 'civic',
+    id: 'civic-125',
+    title: 'ARDC - SMSP Brabham - Last one for the year!',
+    description: '',
+    thumbnail: 'https://live.staticflickr.com/65535/54252100529_af16cdcf4f_b.jpg'
+  },
+  {
+    car: 'civic',
     id: 'civic-124',
     title: 'MWSCC - Morgan Park 2024',
     description: '',
@@ -29,13 +36,6 @@ const latestPostsArray = [
     title: '10-years-with-the-civic',
     description: '',
     thumbnail: 'https://live.staticflickr.com/65535/54104806640_0187a6cb6e_b.jpg'
-  },
-  {
-    car: 'civic',
-    id: 'civic-120',
-    title: 'Winton RPM culprit | BYP Racing retune! | MP prep',
-    description: '',
-    thumbnail: 'https://live.staticflickr.com/65535/54104808020_d30fdf06ed_b.jpg'
   },
   {
     car: 'wago',
