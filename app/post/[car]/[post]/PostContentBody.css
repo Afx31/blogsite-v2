@@ -24,9 +24,9 @@
 }
 
 .reactMarkdown img {
-  display: flex;
-  padding-top: 10px;
-  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  margin: -10px auto 15px auto;
 }
 
 .reactMarkdown iframe {
