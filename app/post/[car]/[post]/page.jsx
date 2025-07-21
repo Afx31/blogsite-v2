@@ -6,7 +6,8 @@ import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../../
 import postsLinkList from '../../../../lib/postsLinkList.json';
 
 export default async function Post({ params }) {
-  var sortedPosts;
+  const {car, post} = await params
+  var sortedPosts
   
   const getMonthText = (month) => {
     switch(month) {
@@ -38,7 +39,7 @@ export default async function Post({ params }) {
   }
 
   const sortPostLinksByMonth = (postLinkList) => {
-    sortedPosts = postLinkList[params.car].reduce((acc, post) => {
+    sortedPosts = postLinkList[car].reduce((acc, post) => {
       var strDateparts = post.date.split('/');
       var strDateformattedDate = strDateparts[2] + '-' + strDateparts[1] + '-' + strDateparts[0];
 
@@ -64,29 +65,29 @@ export default async function Post({ params }) {
     sortedPosts.reverse();
   }
 
-  //sortPostLinksByMonth(await getCarsPostLinks(params.car));
+  //sortPostLinksByMonth(await getCarsPostLinks(car));
   sortPostLinksByMonth(postsLinkList);
 
   return (
     <div className='pContainer'>
       <div className='pRightPaneMobile'>
-        <h1>{params.car}</h1>
+        <h1>{car}</h1>
         <hr className='dropdownDivider'/>
         <h5>RECENT POSTS</h5>
         <div className='threadPostLinks'>
-        {/* onChange={(e) => Router.push(`/post/${params.car}/[id]`, `/post/${e.target.value}`)} */}
-          <select className='pSelect' defaultValue={params.post} > 
-            {postsLinkList[params.car].map((post, index) => {
+        {/* onChange={(e) => Router.push(`/post/${car}/[id]`, `/post/${e.target.value}`)} */}
+          <select className='pSelect' defaultValue={post} > 
+            {postsLinkList[car].map((post, index) => {
               return <option key={`${post.id}-${index}`} value={post.id}>{post.title.replace(/'/g, '')}</option>
             })}
           </select>
         </div>
       </div>
       <div className='pLeftPane'>
-        <PostContentBody post={getPostData(params.car, params.post)} />
+        <PostContentBody post={getPostData(car, post)} />
       </div>
       <div className='pRightPane'>
-        <h1>{params.car.toUpperCase()}</h1>
+        <h1>{car.toUpperCase()}</h1>
         <hr className='dropdownDivider'/>
         <h5>RECENT POSTS</h5>
         <div className='threadPostLinks'>
@@ -97,8 +98,8 @@ export default async function Post({ params }) {
                 <ul className='monthlyPostList'>
                   {groupedPeriod.posts.map((post, index) => (
                     <li key={`${post.id}-${index}`}>
-                      {/* <NextLink className={`postLinks ${router.asPath === `/post/${params.car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/post/${params.car}/${post.id}` }}> */}
-                      <NextLink className={'postLinks'} href={{ pathname: `/post/${params.car}/${post.id}` }}>
+                      {/* <NextLink className={`postLinks ${router.asPath === `/post/${car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/post/${car}/${post.id}` }}> */}
+                      <NextLink className={'postLinks'} href={{ pathname: `/post/${car}/${post.id}` }}>
                         {post.title !== undefined && post.title !== null ? post.title.replace(/'/g, '') : ''}
                       </NextLink>
                     </li>

@@ -68,9 +68,8 @@ export default async function PostContentBody({ post }) {
       <p className='postDate'>
         Posted on {frontmatter.date}
       </p>
-      <div className='reactMarkdown'>
+      <div className='reactMarkdown linebreak'>
         <ReactMarkdown
-          className='linebreak'
           components={{
             a: ({ node, inline, children, href, ...props }) => {
               const match = /^YouTube-Link$/.exec(children || "");
