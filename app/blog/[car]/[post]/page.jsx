@@ -1,5 +1,4 @@
 import './Post.css';
-import React from 'react';
 import NextLink from 'next/link';
 import PostContentBody from './PostBodyContent';
 import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../../lib/util';
@@ -77,8 +76,8 @@ export default async function Post({ params }) {
         <div className='threadPostLinks'>
         {/* onChange={(e) => Router.push(`/blog/${car}/[id]`, `/blog/${e.target.value}`)} */}
           <select className='pSelect' defaultValue={post} > 
-            {postsLinkList[car].map((post, index) => {
-              return <option key={`${post.id}-${index}`} value={post.id}>{post.title.replace(/'/g, '')}</option>
+            {postsLinkList[car].map((postLinkList, index) => {
+              return <option key={`${postLinkList.id}-${index}`} value={postLinkList.id}>{postLinkList.title.replace(/'/g, '')}</option>
             })}
           </select>
         </div>
@@ -96,11 +95,11 @@ export default async function Post({ params }) {
               <li className='groupedHeading' key={groupedPeriod.monthYearString}>
                 <h4>{groupedPeriod.monthYearString}</h4>
                 <ul className='monthlyPostList'>
-                  {groupedPeriod.posts.map((post, index) => (
-                    <li key={`${post.id}-${index}`}>
-                      {/* <NextLink className={`postLinks ${router.asPath === `/blog/${car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/blog/${car}/${post.id}` }}> */}
-                      <NextLink className={'postLinks'} href={{ pathname: `/blog/${car}/${post.id}` }}>
-                        {post.title !== undefined && post.title !== null ? post.title.replace(/'/g, '') : ''}
+                  {groupedPeriod.posts.map((groupedPost, index) => (
+                    <li key={`${groupedPost.id}-${index}`}>
+                      {/* <NextLink className={`postLinks ${router.asPath === `/blog/${car}/>${groupedPost.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/blog/${car}/${groupedPost.id}` }}> */}
+                      <NextLink className={`postLinks ${post === groupedPost.id ? 'postLinksActive' : ''}`} href={{ pathname: `/blog/${car}/${groupedPost.id}` }}>
+                        {groupedPost.title !== undefined && groupedPost.title !== null ? groupedPost.title.replace(/'/g, '') : ''}
                       </NextLink>
                     </li>
                   ))}

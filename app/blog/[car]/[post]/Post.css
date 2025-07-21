@@ -68,6 +68,7 @@
 }
 .postLinksActive {
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .pSelect {
