@@ -1,9 +1,9 @@
-import './Post.css';
+import './post.css'
 import React from 'react';
 import NextLink from 'next/link';
 import PostContentBody from './PostBodyContent';
-import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../../lib/util';
-import postsLinkList from '../../../../lib/postsLinkList.json';
+import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../lib/util'
+import postsLinkList from '../../../lib/postsLinkList.json'
 
 export default async function Post({ params }) {
   const {car, post} = await params
@@ -75,7 +75,7 @@ export default async function Post({ params }) {
         <hr className='dropdownDivider'/>
         <h5>RECENT POSTS</h5>
         <div className='threadPostLinks'>
-        {/* onChange={(e) => Router.push(`/post/${car}/[id]`, `/post/${e.target.value}`)} */}
+        {/* onChange={(e) => Router.push(`/${car}/[id]`, `/${e.target.value}`)} */}
           <select className='pSelect' defaultValue={post} > 
             {postsLinkList[car].map((post, index) => {
               return <option key={`${post.id}-${index}`} value={post.id}>{post.title.replace(/'/g, '')}</option>
@@ -98,8 +98,8 @@ export default async function Post({ params }) {
                 <ul className='monthlyPostList'>
                   {groupedPeriod.posts.map((post, index) => (
                     <li key={`${post.id}-${index}`}>
-                      {/* <NextLink className={`postLinks ${router.asPath === `/post/${car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/post/${car}/${post.id}` }}> */}
-                      <NextLink className={'postLinks'} href={{ pathname: `/post/${car}/${post.id}` }}>
+                      {/* <NextLink className={`postLinks ${router.asPath === `/${car}/>${post.id}` ? 'postLinksActive' : ''}`} href={{ pathname: `/${car}/${post.id}` }}> */}
+                      <NextLink className={'postLinks'} href={{ pathname: `/${car}/${post.id}` }}>
                         {post.title !== undefined && post.title !== null ? post.title.replace(/'/g, '') : ''}
                       </NextLink>
                     </li>

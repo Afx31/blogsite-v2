@@ -10,7 +10,7 @@ export default function CardDisplay({ post: { car, id, title, description, thumb
       <div className='cdContent'>
         <h1>{title}</h1>
         <p>{description}</p>
-        <NextLink href={{ pathname: `/post/${car}/${id}` }}>
+        <NextLink href={{ pathname: `/${car}/${id}` }}>
           <button
             className='cdReadmoreBtn'
           >
