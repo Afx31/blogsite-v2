@@ -114,23 +114,23 @@ export default async function Post({ params }) {
   );
 }
 
-export async function generateStaticParams() {
-  const cars = ['civic', 'wago', 'frogo', 'ef9'];
-  const allPosts = [];
+// export async function generateStaticParams() {
+//   //const cars = ['civic', 'wago', 'frogo', 'ef9'];
+//   const allPosts = [];
 
-  for (const car of cars) {
-    try {
-        const fileNames = await getAllPostFileLinks(car);
-        const carPosts = fileNames.map(post => ({
-          car: car,
-          post: post.replace(/\.md$/, '')
-        }))
+//   for (const car of cars) {
+//     try {
+//         const fileNames = await getAllPostFileLinks(car);
+//         const carPosts = fileNames.map(post => ({
+//           car: car,
+//           post: post.replace(/\.md$/, '')
+//         }))
         
-        allPosts.push(...carPosts);
-    } catch (error) {
-        console.error('Error fetching file names for car:', car, 'Error:', error);
-    }
-  }
+//         allPosts.push(...carPosts);
+//     } catch (error) {
+//         console.error('Error fetching file names for car:', car, 'Error:', error);
+//     }
+//   }
 
-  return allPosts;
-}
+//   return allPosts;
+// }
