@@ -1,8 +1,9 @@
-import './Navbar.css';
+import './NavbarChild.css';
 import NextLink from 'next/link';
+// import React, { useContext } from 'react';
 // import { ThemeContext } from '../../lib/ThemeContext';
 
-export default function Navbar(params) {
+export default function NavbarChild(params) {
   // const [darkMode, setDarkMode] = useContext(ThemeContext);
 
   // const darkModeBtn = (
@@ -24,43 +25,27 @@ export default function Navbar(params) {
 
   return (
     <>
-      <div className='coverImgContainer'></div>
-      <nav className='navbar'>
-        <ul className='navbarList'>
-          <li className='navbarItem'>
-            <NextLink href='/' >
-              <div className='navbarLogo'>
-                <svg fill='#FFFFFF80' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32px' height='32px'>
-                  <path d='M 16 2.59375 L 15.28125 3.28125 L 2.28125 16.28125 L 3.71875 17.71875 L 5 16.4375 L 5 28 L 14 28 L 14 18 L 18 18 L 18 28 L 27 28 L 27 16.4375 L 28.28125 17.71875 L 29.71875 16.28125 L 16.71875 3.28125 Z M 16 5.4375 L 25 14.4375 L 25 26 L 20 26 L 20 16 L 12 16 L 12 26 L 7 26 L 7 14.4375 Z'/>
-                </svg>
-              </div>
+      <nav className='navbarchild'>
+        <ul className='navbarchild-List'>
+          <li className='navbarchild-Item'>
+            <NextLink href={{ pathname: `/cars/civic/${params.civicLink}` }}>
+              Civic
             </NextLink>
           </li>
-        </ul>
-        <ul className='navbarList'>
-          <li className='navbarItem'>
-            <NextLink href={{ pathname: `/cars/civic/${params.carLink}` }}>
-              Cars
+          <li className='navbarchild-Item'>
+            <NextLink href={{ pathname: `/cars/wago/${params.wagoLink}` }}>
+              Wago
             </NextLink>
           </li>
-          <li className='navbarItem'>
-            {/* <NextLink href={{ pathname: `/photography/${params.photographyLink}` }}> */}
-            <NextLink href={{ pathname: `/photography` }}>
-              Photography
+          <li className='navbarchild-Item'>
+            <NextLink href={{ pathname: `/cars/frogo/${params.frogoLink}` }}>
+              Frogo
             </NextLink>
           </li>
-          <li className='navbarItem'>
-            {/* <NextLink href={{ pathname: `/tech/${params.techLink}` }}> */}
-            <NextLink href={{ pathname: `/tech` }}>
-              Tech
+          <li className='navbarchild-Item'>
+            <NextLink href={{ pathname: `/cars/ef9/${params.ef9Link}` }}>
+              EF9
             </NextLink>
-          </li>
-        </ul>
-        <ul className='navbarList'>
-          <li className='navbarItemThemebtn'>
-            <div className='navbarLink'>
-              {true}
-            </div>
           </li>
         </ul>
       </nav>

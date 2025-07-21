@@ -2,8 +2,8 @@ import './post.css'
 import React from 'react';
 import NextLink from 'next/link';
 import PostContentBody from './PostBodyContent';
-import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../lib/util'
-import postsLinkList from '../../../lib/postsLinkList.json'
+import { getAllPostFileLinks, getCarsPostLinks, getPostData } from '../../../../lib/util'
+import postsLinkList from '../../../../lib/postsLinkList.json'
 
 export default async function Post({ params }) {
   const {car, post} = await params
