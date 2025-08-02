@@ -1,0 +1,215 @@
+.car-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* ---------- Overview ---------- */
+.car-overview {
+  padding: 1rem 0;
+}
+
+.car-overview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.car-overview-photo {
+  /* display: flex; */
+  /* flex-direction: column; */
+  position: relative;
+  /* width: 300px; */
+  height: 300px;
+}
+
+.car-overview-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+
+/* ---------- Technical Specifications ---------- */
+.car-spec {
+  padding: 1rem 0;
+}
+
+.car-spec-container {
+
+}
+
+.car-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.car-spec-category {
+  background-color: var(--background-secondary);
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 4px solid #007acc;
+  transition: transform 0.3s ease;
+}
+
+.car-spec-category h3 {
+  background-color: inherit;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  /* color: #666; */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.car-spec-category h3 i {
+  color: #007acc;
+}
+
+.car-spec-category ul {
+  background-color: inherit;
+  list-style: none;
+}
+
+.car-spec-category li {
+  background-color: inherit;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-spec-category li:last-child {
+  border-bottom: none;
+}
+
+.car-spec-category strong {
+  background-color: inherit;
+  color: #666;
+  font-weight: 600;
+}
+
+
+/* ---------- Race Data ---------- */
+.car-racedata {
+  padding: 1rem 0;
+}
+
+.car-racedata-container {
+
+}
+
+.car-racedata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.car-racedata-card {
+  background-color: #232f3b;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.car-racedata-header {
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.car-racedata-header h3 {
+  background-color: inherit;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.car-racedata-country {
+  background-color: #007acc;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.car-racedata-lap-time {
+  background-color: inherit;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.car-racedata-time {
+  background-color: inherit;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #007acc;
+  font-family: 'Courier New', monospace;
+}
+
+.car-racedata-date {
+  background-color: inherit;
+  display: block;
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: 0.5rem;
+}
+
+.car-racedata-track-info {
+  background-color: inherit;
+}
+
+.car-racedata-track-info p {
+  background-color: inherit;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+/* //////////////////////////////////////////////////// */
+
+.car-racedata-grid-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.car-racedata-card-v2 {
+  background-color: #232f3b;
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.car-racedata-card-v2 table {
+  background-color: inherit;
+  border-collapse: collapse;
+  width: 100%;
+}
+.car-racedata-card-v2 tbody, tr {
+  border-bottom: .5px solid #2e2e2e;
+}
+.car-racedata-card-v2 th, td {
+  /* background-color: inherit; */
+  padding: 10px;
+  text-align: left;
+}
+.car-racedata-card-v2 th {
+  background-color: #232f3b;
+}
