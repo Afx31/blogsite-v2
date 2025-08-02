@@ -49,14 +49,14 @@ h2 {
 
 .car-spec-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
 }
 
 .car-spec-category {
   background-color: var(--background-secondary);
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 5px;
   border-left: 4px solid #007acc;
   transition: transform 0.3s ease;
 }
@@ -78,6 +78,7 @@ h2 {
 .car-spec-category ul {
   background-color: inherit;
   list-style: none;
+  padding-left: 0px;
 }
 
 .car-spec-category li {
@@ -118,7 +119,7 @@ h2 {
 .car-racedata-card {
   background-color: #232f3b;
   backdrop-filter: blur(10px);
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;

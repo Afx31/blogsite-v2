@@ -18,9 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className='darkmode'>
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+      </head>
       <body>
         <Navbar
-          civicLink={navLinks.civic}
+          // civicLink={navLinks.civic}
           wagoLink={navLinks.wago}
           frogoLink={navLinks.frogo}
           ef9Link={navLinks.ef9}

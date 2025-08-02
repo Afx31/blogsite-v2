@@ -40,7 +40,7 @@ export default function Navbar(params) {
         </ul>
         <ul className='navbarList'>
           <li className='navbarItem'>
-            <NextLink href={{ pathname: `/blog/civic/${params.civicLink}` }}>
+            <NextLink href={{ pathname: `/blog/civic` }}>
               Civic
             </NextLink>
           </li>

@@ -1,5 +1,6 @@
-import Image from 'next/image'
 import './Car.css'
+import React from 'react'
+import Image from 'next/image'
 import civicSpecData from '../../../lib/civicSpecData.json'
 import civicRaceData from '../../../lib/civicRaceData.json'
 
@@ -15,6 +16,7 @@ export default function Car() {
             <div className='car-overview-photo'>
               <Image
                 src='/civic-img.jpg'
+                alt='Car - Civic'
                 fill
               />
             </div>
@@ -72,13 +74,13 @@ export default function Car() {
                 </thead>
                 <tbody>
                   {civicRaceData.map((x, index) => (
-                    <>
+                    <React.Fragment key={index}>
                       <tr>
                         <td>{x.name}</td>
                         <td>{x.time}</td>
                         <td>{x.date}</td>
                       </tr>
-                    </>
+                    </React.Fragment>
                   ))}
                 </tbody>
               </table>
@@ -94,13 +96,13 @@ export default function Car() {
                 </thead>
                 <tbody>
                   {civicRaceData.map((x, index) => (
-                    <>
+                    <React.Fragment key={index}>
                       <tr>
                         <td>{x.name}</td>
                         <td>{x.time}</td>
                         <td>{x.date}</td>
                       </tr>
-                    </>
+                    </React.Fragment>
                   ))}
                 </tbody>
               </table>
