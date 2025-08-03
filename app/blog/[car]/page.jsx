@@ -1,10 +1,12 @@
 import './Car.css'
 import React from 'react'
 import Image from 'next/image'
+import NextLink from 'next/link'
 import civicSpecData from '../../../lib/civicSpecData.json'
 import civicRaceData from '../../../lib/civicRaceData.json'
 
 export default function Car() {
+
   return (
     <div className='car-container'>
 
@@ -33,6 +35,13 @@ export default function Car() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className='car-blog-btn-section'>
+        {/* TODO: Resolve hardcoding this, for now it's ok. Don't want to do `use client` client side */}
+        <NextLink className='car-blog-btn' href={{ pathname: `/blog/civic/civic-125` }}>
+          View Blog Post's
+        </NextLink>
       </section>
 
       {/* Tech specs of the car */}

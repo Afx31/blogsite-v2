@@ -11,6 +11,40 @@ h2 {
   margin-bottom: 3rem;
 }
 
+/* ---------- Car Blog Btn ---------- */
+.car-blog-btn-section {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.car-blog-btn {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  padding: 0.8rem;
+  background-color: #0070f3;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.car-blog-btn:hover {
+  background-color: #0059c1;
+  transform: translateY(-1px);
+}
+
+.car-blog-btn:active {
+  transform: translateY(1px);
+}
+
+.car-blog-btn:focus {
+  outline: 2px solid #0059c1;
+  outline-offset: 2px;
+}
+
 /* ---------- Overview ---------- */
 .car-overview {
   padding: 1rem 0;
