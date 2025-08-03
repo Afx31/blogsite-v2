@@ -2,10 +2,14 @@ import './Car.css'
 import React from 'react'
 import Image from 'next/image'
 import NextLink from 'next/link'
+import carOverviewData from '../../../lib/carOverviewData.json'
 import civicSpecData from '../../../lib/civicSpecData.json'
 import civicRaceData from '../../../lib/civicRaceData.json'
 
 export default function Car() {
+  // TODO: Pass this through
+  const car = 'civic'
+  const carData = carOverviewData[car];
 
   return (
     <div className='car-container'>
@@ -13,23 +17,19 @@ export default function Car() {
       {/* Overview of the car */}
       <section className='car-overview'>
         <div className='car-overview-container'>
-          <h2>Civic - Overview</h2>
+          <h2>{carData.title} - Overview</h2>
           <div className='car-overview-content'>
             <div className='car-overview-photo'>
               <Image
-                src='/images/civic-intro.jpg'
-                alt='Car - Civic'
+                src = {carData.overview.image}
+                alt = {`Car - ${carData.overview.title}`}
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
             <div className='car-overview-text'>
-              <p>
-                I purchased my 1989 Honda Civic ED6 in 2014 as a daily, with the intention of taking it to the track. After receiving a B18CR swap 2 years in, the car has since developed with quite a solid suspension package, sporting faster lap times as I get more time in the saddle. Towards the end of 2024, the Civic received a big gearbox upgrade to take it to the next step.
-              </p>
-              <p>
-                After years of watching GT racing, the itch has grown to start my door to door career in the car. The Civic has now received a full weld in cage, and has been prepped for racing. It will be competing in our local MRA Super TT competition, I'll document all of the racing through here as the build thread continues!
-              </p>
+              <p>{carData.overview.description[0]}</p>
+              <p>{carData.overview.description[1]}</p>
             </div>
           </div>
         </div>
