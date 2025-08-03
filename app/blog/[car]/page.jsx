@@ -17,20 +17,18 @@ export default function Car() {
           <div className='car-overview-content'>
             <div className='car-overview-photo'>
               <Image
-                src='/civic-img.jpg'
+                src='/images/civic-intro.jpg'
                 alt='Car - Civic'
                 fill
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className='car-overview-text'>
               <p>
-                The BMW M4 GT3 is the latest evolution in BMW's storied racing heritage. Built from the ground up for GT3 competition, this machine combines cutting-edge aerodynamics with BMW's legendary inline-six engine technology.
+                I purchased my 1989 Honda Civic ED6 in 2014 as a daily, with the intention of taking it to the track. After receiving a B18CR swap 2 years in, the car has since developed with quite a solid suspension package, sporting faster lap times as I get more time in the saddle. Towards the end of 2024, the Civic received a big gearbox upgrade to take it to the next step.
               </p>
               <p>
-                Every component has been meticulously engineered for maximum performance and reliability. From the carbon fiber monocoque chassis to the advanced traction control system, the M4 GT3 represents the pinnacle of what's possible when form follows function.
-              </p>
-              <p>
-                This race car has proven its mettle on circuits around the world, securing victories in prestigious championships and setting new benchmarks for GT3 performance. Whether it's the Nürburgring Nordschleife or the streets of Monaco, the M4 GT3 delivers uncompromising performance.
+                After years of watching GT racing, the itch has grown to start my door to door career in the car. The Civic has now received a full weld in cage, and has been prepped for racing. It will be competing in our local MRA Super TT competition, I'll document all of the racing through here as the build thread continues!
               </p>
             </div>
           </div>
@@ -40,7 +38,10 @@ export default function Car() {
       <section className='car-blog-btn-section'>
         {/* TODO: Resolve hardcoding this, for now it's ok. Don't want to do `use client` client side */}
         <NextLink className='car-blog-btn' href={{ pathname: `/blog/civic/civic-125` }}>
-          View Blog Post's
+          View Blog Posts
+        </NextLink>
+        <NextLink className='car-blog-btn' href="https://www.youtube.com/channel/UCFc9tpCLYcSgmSTzTHyZiIQ">
+          YouTube
         </NextLink>
       </section>
 
