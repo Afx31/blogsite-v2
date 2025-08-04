@@ -76,6 +76,7 @@ export default function Car() {
           <div className='car-racedata-grid'>
             <div className='car-racedata-card'>
               <table>
+                <caption>Fastest Laps</caption>
                 <thead>
                   <tr>
                     <th>Track</th>
@@ -84,7 +85,7 @@ export default function Car() {
                   </tr>
                 </thead>
                 <tbody>
-                  {civicRaceData.map((x, index) => (
+                  {civicRaceData['fastestLaps'].map((x, index) => (
                     <React.Fragment key={index}>
                       <tr>
                         <td>{x.name}</td>
@@ -98,15 +99,16 @@ export default function Car() {
             </div>
             <div className='car-racedata-card'>
               <table>
+                <caption>Race Results</caption>
                 <thead>
                   <tr>
                     <th>Track</th>
-                    <th>Time</th>
+                    <th>Finish Positions</th>
                     <th>Date</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {civicRaceData.map((x, index) => (
+                  {civicRaceData['raceResults'].map((x, index) => (
                     <React.Fragment key={index}>
                       <tr>
                         <td>{x.name}</td>

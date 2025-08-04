@@ -220,6 +220,12 @@
   width: 100%;
 }
 
+.car-racedata-card caption {
+  color: #e2e2e2; 
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .car-racedata-card tbody, tr {
   border-bottom: 1px solid rgba(255, 68, 68, 0.1);
   transition: background-color 0.2s ease;

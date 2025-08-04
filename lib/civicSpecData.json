@@ -1,13 +1,13 @@
 [
   {
     "title": "Engine",
-    "icon": "fas fa-engine",
+    "icon": "fas fa-car",
     "items": [
       { "label": "Type", "value": "Honda B18CR" },
       { "label": "Displacement", "value": "1.8L (1,797 cc)" },
       { "label": "Power Output", "value": "132.5kw" },
       { "label": "Torque", "value": "--- Nm" },
-      { "label": "Redline", "value": "8720 RPM" }
+      { "label": "Redline", "value": "8,720 RPM" }
     ]
   },
   {
@@ -15,9 +15,9 @@
     "icon": "fas fa-cog",
     "items": [
       { "label": "Type", "value": "Type R - S80 LSD" },
-      { "label": "Clutch", "value": "Standard Exedy" },
+      { "label": "Clutch", "value": "Standard Exedy Clutch" },
       { "label": "Differential", "value": "Cusco LSD Type RS 1.5Way" },
-      { "label": "Gear Ratios", "value": "1/2 - OEM  ||  3/4/5 - GearX Short ratio  ||  FD - OEM" },
+      { "label": "Gear Ratios", "value": "1/2 - OEM | 3/4/5 - GearX Short ratio | FD - OEM" },
       { "label": "Shifter", "value": "FastLine Shifter - Honed Gear Linkage - HR Detent Springs" }
     ]
   },
@@ -25,16 +25,17 @@
     "title": "Suspension",
     "icon": "fas fa-tools",
     "items": [
-      { "label": "Coilovers", "value": "BC ER - F: 20kg | R: 14kg" },
-      { "label": "Suspension", "value": "Double Wishbone" },
+      { "label": "Suspension System", "value": "Double Wishbone" },
+      { "label": "Coilovers", "value": "BC ER ~ F: 20kg | R: 14kg" },
       { "label": "Camber Arms", "value": "F: Skunk2 | R: Honed Developments" },
+      { "label": "Sway Bars", "value": "F: OEM | R: 14" },
       { "label": "Geometry", "value": "Full Honed Geometry correction kit" },
       { "label": "Castor", "value": "Innovative Traction Bar" }
     ]
   },
   {
     "title": "Brakes",
-    "icon": "fas fa-tachometer-alt",
+    "icon": "fas fa-ban",
     "items": [
       { "label": "Calipers", "value": "F: DC2R/CRV 282mm | R: Stock CRX" },
       { "label": "Rotors", "value": "F: DBA T3 282mm | R: Stock CRX Blanks" },
@@ -46,7 +47,7 @@
   },
   {
     "title": "Interior",
-    "icon": "fas fa-car",
+    "icon": "fas fa-chair",
     "items": [
       { "label": "Seat", "value": "Racetech - RT4009HR" },
       { "label": "Harness", "value": "RPM 6pt 3inch" },
@@ -58,11 +59,10 @@
     "title": "Exterior",
     "icon": "fas fa-wind",
     "items": [
-      { "label": "Test", "value": "---" },
-      { "label": "Test", "value": "---" },
-      { "label": "Test", "value": "---" },
-      { "label": "Test", "value": "---" },
-      { "label": "Test", "value": "---" }
+      { "label": "Front", "value": "EF9 Front Conversion + J's Racing lip" },
+      { "label": "Back", "value": "Standard" },
+      { "label": "Sides", "value": "EK Side Skirts" },
+      { "label": "Spoiler", "value": "Devil Wing (rep)" }
     ]
   }
 ]

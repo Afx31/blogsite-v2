@@ -1,44 +1,90 @@
-[
-  {
-    "id": 1,
-    "name": "SMSP - GP",
-    "time": "1:58.234",
-    "date": "2023-06-10"
-  },
-  {
-    "id": 2,
-    "name": "SMSP - North Circuit",
-    "time": "1.15.79",
-    "date": "15-12-2021"
-  },
-  {
-    "id": 3,
-    "name": "SMSP - Brabham",
-    "time": "2.14.98",
-    "date": "14-11-2024"
-  },
-  {
-    "id": 4,
-    "name": "Morgan Park",
-    "time": "1.28.05",
-    "date": "22-10-2024"
-  },
-  {
-    "id": 5,
-    "name": "Winton Raceway",
-    "time": "1.37.45",
-    "date": "14-09-2024"
-  },
-  {
-    "id": 6,
-    "name": "Wakefield",
-    "time": "1.09.12",
-    "date": "23-04-2021"
-  },
-  {
-    "id": 7,
-    "name": "Pheasant Wood Circuit",
-    "time": "1.02.24",
-    "date": "19-05-2024"
-  }
-]
+{
+  "fastestLaps": [
+    {
+      "id": 1,
+      "name": "SMSP - GP",
+      "time": "1:58.234",
+      "date": "2023-06-10"
+    },
+    {
+      "id": 2,
+      "name": "SMSP - North Circuit",
+      "time": "1.15.79",
+      "date": "15-12-2021"
+    },
+    {
+      "id": 3,
+      "name": "SMSP - Brabham",
+      "time": "2.14.98",
+      "date": "14-11-2024"
+    },
+    {
+      "id": 4,
+      "name": "Morgan Park",
+      "time": "1.28.05",
+      "date": "22-10-2024"
+    },
+    {
+      "id": 5,
+      "name": "Winton Raceway",
+      "time": "1.37.45",
+      "date": "14-09-2024"
+    },
+    {
+      "id": 6,
+      "name": "Wakefield",
+      "time": "1.09.12",
+      "date": "23-04-2021"
+    },
+    {
+      "id": 7,
+      "name": "Pheasant Wood Circuit",
+      "time": "1.02.24",
+      "date": "19-05-2024"
+    }
+  ],
+  "raceResults": [
+    {
+      "id": 1,
+      "name": "SMSP - GP",
+      "time": "----------",
+      "date": "----------"
+    },
+    {
+      "id": 2,
+      "name": "SMSP - North Circuit",
+      "time": "----------",
+      "date": "----------"
+    },
+    {
+      "id": 3,
+      "name": "SMSP - Brabham",
+      "time": "----------",
+      "date": "----------"
+    },
+    {
+      "id": 4,
+      "name": "Morgan Park",
+      "time": "----------",
+      "date": "----------"
+    },
+    {
+      "id": 5,
+      "name": "Winton Raceway",
+      "time": "----------",
+      "date": "----------"
+    },
+    {
+      "id": 6,
+      "name": "Wakefield",
+      "time": "----------",
+      "date": "----------"
+    },
+    {
+      "id": 7,
+      "name": "Pheasant Wood Circuit",
+      "time": "----------",
+      "date": "----------"
+    }
+  ]
+}
