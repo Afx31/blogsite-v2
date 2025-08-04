@@ -1,0 +1,15 @@
+{
+  "civic": {
+    "title": "Civic",
+    "overview": {
+      "image": "/images/civic-intro.jpg",
+      "description": [
+        "I purchased my 1989 Honda Civic ED6 in 2014 as a daily, with the intention of taking it to the track. After receiving a B18CR swap 2 years in, the car has since developed with quite a solid suspension package, sporting faster lap times as I get more time in the saddle. Towards the end of 2024, the Civic received a big gearbox upgrade to take it to the next step.",
+
+        "After years of watching GT racing, the itch has grown to start my door to door career in the car. The Civic has now received a full weld in cage, and has been prepped for racing. It will be competing in our local MRA Super TT competition, I'll document all of the racing through here as the build thread continues!"
+      ]
+    },
+    "specData": "civicSpecData",
+    "raceData": "civicRaceData"
+  }
+}
