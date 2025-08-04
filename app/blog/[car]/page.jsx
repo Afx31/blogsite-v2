@@ -12,7 +12,7 @@ export default function Car() {
   const carData = carOverviewData[car];
 
   return (
-    // <div className='car-page-wrapper'>
+    // <div className='car-page-wrapper'> /* Puts a darker wrapper either side of middle section */
     <div className='car-container'>
 
       {/* Overview of the car */}
@@ -73,8 +73,8 @@ export default function Car() {
       <section className='car-racedata'>
         <div className='car-racedata-container'>
           <h2>Race Stats</h2>
-          <div className='car-racedata-grid-v2'>
-            <div className='car-racedata-card-v2'>
+          <div className='car-racedata-grid'>
+            <div className='car-racedata-card'>
               <table>
                 <thead>
                   <tr>
@@ -96,7 +96,7 @@ export default function Car() {
                 </tbody>
               </table>
             </div>
-            <div className='car-racedata-card-v2'>
+            <div className='car-racedata-card'>
               <table>
                 <thead>
                   <tr>
