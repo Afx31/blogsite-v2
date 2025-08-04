@@ -1,3 +1,9 @@
+/* .car-page-wrapper {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+  min-height: 100vh;
+  width: 100%; 
+} */
+
 .car-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -9,46 +15,56 @@
   text-align: center;
   font-size: 3rem;
   margin-bottom: 3rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* ---------- Car Blog Btn ---------- */
 .car-blog-btn-section {
-  padding: 1rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  background: transparent;
 }
 
 .car-blog-btn {
   display: inline-block;
   width: 35%;
   text-align: center;
-  padding: 0.8rem;
-  background-color: #0070f3;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #8b0000 0%, #660000 100%);
   color: #ffffff;
-  border-radius: 8px;
+  border-radius: 4px;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 1px solid rgba(139, 0, 0, 0.3);
 }
 
 .car-blog-btn:hover {
-  background-color: #0059c1;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #660000 0%, #8b0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 0, 0, 0.5);
+  color: #ffffff;
 }
 
 .car-blog-btn:active {
-  transform: translateY(1px);
+  transform: translateY(0);
 }
 
 .car-blog-btn:focus {
-  outline: 2px solid #0059c1;
+  outline: 2px solid #8b0000;
   outline-offset: 2px;
 }
 
 /* ---------- Overview ---------- */
 .car-overview {
-  padding: 1rem 0;
+  padding: 2rem 0;
+  background: transparent;
 }
 
 .car-overview-content {
@@ -57,26 +73,33 @@
   gap: 4rem;
   align-items: start;
 }
+
 .car-overview-photo {
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 68, 68, 0.3);
 }
 
 .car-overview-text {
+  background: transparent;
 }
 
 .car-overview-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  color: #666;
+  color: #e0e0e0;
+  background: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-
 
 /* ---------- Technical Specifications ---------- */
 .car-spec {
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .car-spec-container {
@@ -90,40 +113,59 @@
 }
 
 .car-spec-category {
-  background-color: var(--background-secondary);
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
   padding: 2rem;
-  border-radius: 5px;
-  border-left: 4px solid #007acc;
-  transition: transform 0.3s ease;
+  border-radius: 4px;
+  border-left: 4px solid #ff4444;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 68, 68, 0.2);
+}
+
+.car-spec-category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  border-left: 4px solid #cc0000;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
 }
 
 .car-spec-category h3 {
-  background-color: inherit;
+  background: transparent;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
-  /* color: #666; */
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .car-spec-category h3 i {
-  color: #007acc;
+  color: #cc0000;
+  font-size: 1.2rem;
+  background: transparent;
 }
 
 .car-spec-category ul {
-  background-color: inherit;
+  background: transparent;
   list-style: none;
   padding-left: 0px;
 }
 
 .car-spec-category li {
-  background-color: inherit;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #e9ecef;
+  background: transparent;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 68, 68, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.car-spec-category li:hover {
+  background: rgba(255, 68, 68, 0.05);
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .car-spec-category li:last-child {
@@ -131,38 +173,33 @@
 }
 
 .car-spec-category strong {
-  background-color: inherit;
-  color: #666;
+  background: transparent;
+  color: #e2e2e2;
   font-weight: 600;
 }
 
-
 /* ---------- Race Data ---------- */
 .car-racedata {
-  padding: 1rem 0;
+  padding: 2rem 0;
+  background: transparent;
 }
 
 .car-racedata-container {
-
-}
-
-.car-racedata-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  background: transparent;
 }
 
 .car-racedata-card {
-  background-color: #232f3b;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
   backdrop-filter: blur(10px);
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 68, 68, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .car-racedata-header {
-  background-color: inherit;
+  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,51 +207,53 @@
 }
 
 .car-racedata-header h3 {
-  background-color: inherit;
+  background: transparent;
   font-size: 1.3rem;
-  color: #fff;
-}
-
-.car-racedata-country {
-  background-color: #007acc;
-  color: #fff;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  color: #ffffff;
   font-weight: 600;
 }
 
+.car-racedata-country {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+}
+
 .car-racedata-lap-time {
-  background-color: inherit;
+  background: transparent;
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
 .car-racedata-time {
-  background-color: inherit;
+  background: transparent;
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #007acc;
+  color: #ffffff;
   font-family: 'Courier New', monospace;
 }
 
 .car-racedata-date {
-  background-color: inherit;
+  background: transparent;
   display: block;
   font-size: 0.9rem;
-  color: #999;
+  color: #b0b0b0;
   margin-top: 0.5rem;
 }
 
 .car-racedata-track-info {
-  background-color: inherit;
+  background: transparent;
 }
 
 .car-racedata-track-info p {
-  background-color: inherit;
+  background: transparent;
   font-size: 0.9rem;
-  color: #ccc;
+  color: #e0e0e0;
   margin-bottom: 0.5rem;
 }
 
@@ -227,26 +266,75 @@
 }
 
 .car-racedata-card-v2 {
-  background-color: #232f3b;
-  border-radius: 15px;
+  /* background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); */
+  border-radius: 16px;
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 68, 68, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.car-racedata-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 68, 68, 0.4);
 }
 
 .car-racedata-card-v2 table {
-  background-color: inherit;
+  background: transparent;
   border-collapse: collapse;
   width: 100%;
 }
+
 .car-racedata-card-v2 tbody, tr {
-  border-bottom: .5px solid #2e2e2e;
+  border-bottom: 1px solid rgba(255, 68, 68, 0.1);
+  transition: background-color 0.2s ease;
 }
+
+.car-racedata-card-v2 tr:hover {
+  background: rgba(255, 68, 68, 0.05);
+}
+
 .car-racedata-card-v2 th, td {
-  /* background-color: inherit; */
-  padding: 10px;
+  padding: 12px;
   text-align: left;
+  background: transparent;
 }
+
 .car-racedata-card-v2 th {
-  background-color: #232f3b;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: 2px solid rgba(255, 68, 68, 0.3);
+}
+
+.car-racedata-card-v2 td {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .car-overview-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .car-racedata-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .car-blog-btn-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-blog-btn {
+    width: 80%;
+  }
+  
+  .car-container h2 {
+    font-size: 2.5rem;
+  }
 }

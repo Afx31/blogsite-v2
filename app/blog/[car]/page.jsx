@@ -12,6 +12,7 @@ export default function Car() {
   const carData = carOverviewData[car];
 
   return (
+    // <div className='car-page-wrapper'>
     <div className='car-container'>
 
       {/* Overview of the car */}
@@ -121,5 +122,6 @@ export default function Car() {
         </div>
       </section>
     </div>
+    // </div>
   )
 }
